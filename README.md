@@ -42,7 +42,10 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 
 
 ### 3. Machine Learning:
-
+| Platform                                                                                                          | Type      |
+|--------------------------------------------------------------------------------------------------------------------|-----------|
+| [Data Science Interviews by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVPkl7oRvzyNnyj1HS4wt2K-)| Interview |
+| [Unsupervised Machine Learning by Cognitive Class (Project Based)](https://cognitiveclass.ai/learn/unsupervised-machine-learning)| Practice |
 
 ## Module 1 - Data Analysis
 

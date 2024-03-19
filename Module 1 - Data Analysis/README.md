@@ -1,6 +1,6 @@
 ### <p align = 'center'>Data Analysis Practice</p>
 
-## Data Analysis Pathway
+## 1. Data Analysis Pathway
 
 - **Scrape data from websites:** Show your code, and use hashed comments to explain your thinking.
 - **Clean data:** Take a dataset with missing, duplicate, or other problematic data, and walk through your data cleaning process.
@@ -10,7 +10,7 @@
 - **Collaborate with others:** If you’ve worked on a group project, be sure to include it.
 - **Use data analysis tools:** Share projects that show off your ability to use SQL, Python, R, Tableau, etc.
 
-## **Exploratory Data Analysis (Basic Steps)**
+## 2. How to perform Exploratory Data Analysis (EDA) (Basic Steps):
 
 After looking at the data for the first time, you should ask yourself a few questions:
 
@@ -36,7 +36,7 @@ Incase of multivariate if the independent variable is categorical then we can us
 
 Else Scatterplots are best for multivariate analysis.
 
-**IQR**
+### **IQR**
 
 It tells you where majority of the data lie. Gives the central tendancy of the data.
 
