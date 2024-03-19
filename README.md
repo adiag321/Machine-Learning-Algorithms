@@ -6,15 +6,15 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 
 | Platform                                                                                            |
 |-------------------------------------------------------------------------------------------------|
+| [FreeCodeCamp Learning](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success#)
 | [UpGrad Learning](https://www.notion.so/UpGrad-Learning-5b6c7b338fd2425e983f7052f5e4279c?pvs=21) |
-| [Analytics Vidhya Website](https://www.notion.so/Analytics-Vidhya-Website-c7376ed03b49425aa0a85421ad2f6dc7?pvs=21) |
-| [Udacity Learning Platform](https://www.notion.so/Udacity-Learning-Platform-0d25b39d0e174c5f803b666e1711fef2?pvs=21) |
-| [Khan Academy](https://www.notion.so/Khan-Academy-cd69d1ffd4ad41d1bff21bd6ffa51618?pvs=21) |
-| [Udemy Online Courses](https://www.notion.so/Udemy-Online-Courses-3bd29fc79f264b25aef20d765b147272?pvs=21) |
-| [EDX](https://www.notion.so/EDX-272a1f5f4b60451f87fdd25792cc67ca?pvs=21) |
-| [Coursera](https://www.notion.so/Coursera-707788edbb434beb944cf75b07a73df1?pvs=21) |
-| [Kaggle](https://www.notion.so/Kaggle-4fbcd705c76e4e5bb7341e87027bb599?pvs=21) |
-| [Datacamp](https://www.notion.so/Datacamp-9398400077944de18f61943640d014ce?pvs=21) |
+| [Analytics Vidhya Website](https://courses.analyticsvidhya.com/enrollments) |
+| [Udacity Learning Platform](https://classroom.udacity.com/me) |
+| [Khan Academy](https://www.khanacademy.org/) |
+| [Udemy Online Courses](https://www.udemy.com/home/my-courses/learning/) |
+| [EDX](https://courses.edx.org/dashboard#) |
+| [Coursera](https://www.coursera.org/) |
+| [Kaggle](https://www.kaggle.com/learn) |
 | [Great Learning](https://www.greatlearning.in/) |
 
 ### 2. SQL:
