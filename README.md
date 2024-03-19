@@ -2,7 +2,7 @@
 In this repository, I have curated all the materialsone can use to study SQL, Data Analysis, Python and Machine learning Algorithms.
 
 ## Resources to Follow
-### 1. General:
+### 1. General Platforms:
 
 | Platform                                                                                            |
 |-------------------------------------------------------------------------------------------------|
@@ -31,14 +31,18 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 | [Mode Analytics](https://mode.com/sql-tutorial/introduction-to-sql/)            | Practice|
 | [SQLZoo](https://sqlzoo.net/wiki/SQL_Tutorial)                            | Practice|
 | [W3Resources](https://www.w3resource.com/sql-exercises/subqueries/index.php)                    | Practice|
-| [GeeksForGeeks](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)              | Practice|
+| [GeeksForGeeks 30 Days of SQL Basic to Advance](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)              | Practice|
 | [SQL Interview Prep - GitHub](https://github.com/Aafreen29/SQL-Interview-Prep-Question) | Interview|
-| [8 Week SQL Challenge](https://8weeksqlchallenge.com/)| Practice|
+| [Data with Danny: 8 Week SQL Challenge](https://8weeksqlchallenge.com/)| Practice|
 | [Clever Programming SQL Interview Questions](https://thecleverprogrammer.com/2023/07/19/sql-interview-questions-for-data-science/)| Interview|
 | [StrataScratch - Youtube](https://www.youtube.com/playlist?list=PLv6MQO1Zzdmq5w4YkdkWyW8AaWatSQ0kX)| Practice|
 | [Crack Concepts SQL](https://www.youtube.com/@crackconcepts)   | Practice|
 | [Ankit Bansal - SQL](https://www.youtube.com/@ankitbansal6)   | Practice|
 | [Tina Huang’s SQL Series](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA) | Practice|
+
+
+### 3. Machine Learning:
+
 
 ## Module 1 - Data Analysis
 
