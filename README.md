@@ -4,7 +4,7 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 ## Resources to Follow
 ### 1. General:
 
-| Link                                                                                            |
+| Platform                                                                                            |
 |-------------------------------------------------------------------------------------------------|
 | [UpGrad Learning](https://www.notion.so/UpGrad-Learning-5b6c7b338fd2425e983f7052f5e4279c?pvs=21) |
 | [Analytics Vidhya Website](https://www.notion.so/Analytics-Vidhya-Website-c7376ed03b49425aa0a85421ad2f6dc7?pvs=21) |
@@ -19,25 +19,26 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 
 ### 2. SQL:
 
-| Link                                                                                                    | Type      |
+| Platform                                                                                                    | Type      |
 |---------------------------------------------------------------------------------------------------------|-----------|
-| [DataLemur](https://www.notion.so/DataLemur-c4801f26b5eb4f108f0e53ae8a12e314?pvs=21)                    | Interview|
-| [StrataScatch](https://www.notion.so/StrataScatch-7332f82080ca468a91f41d6822fa2248?pvs=21)              | Interview|
-| [DataFord Io](https://www.notion.so/DataFord-Io-a2f46f5ff7c74915a45f2d641109cc1c?pvs=21)                  | Interview|
-| [LeetCode](https://www.notion.so/LeetCode-885379cd3c044fd3905f1f4b3b1bb87a?pvs=21)                        | Interview|
-| [Hackerrank](https://www.notion.so/Hackerrank-868a3290ce6d462a90e1067a2fb13a05?pvs=21)                    | Interview|
-| [Analyst Builder](https://www.notion.so/Analyst-Builder-552a1473ec9a430288f57a375436981e?pvs=21)         | Interview|
-| [Mode Analytics](https://www.notion.so/Mode-Analytics-a5e5d74308714f5fb8e478278457b77b?pvs=21)            | Practice|
-| [SQLZoo](https://www.notion.so/SQLZoo-f9e3a767b30642929597de8a83a9c37e?pvs=21)                            | Practice|
-| [W3Resources](https://www.notion.so/W3Resources-ea1deee49e10431bbf1bac3d41510bc0?pvs=21)                    | Practice|
-| [GeeksForGeeks](https://www.notion.so/GeeksForGeeks-f3564d76ad3f4364a035eef218c6b467?pvs=21)              | Practice|
-| [SQL Interview Prep - GitHub](https://www.notion.so/SQL-Interview-Prep-GitHub-6ad67b0a31b847569ed386d43707a766?pvs=21) | Interview|
-| [8 Week SQL Challenge](https://www.notion.so/8-Week-SQL-Challenge-4a8cee3d9e3e49079632384681085aac?pvs=21)| Practice|
-| [SQL Interview Questions](https://www.notion.so/SQL-Interview-Questions-4055b3dd217c47f8886645d08f3ef669?pvs=21)| Interview|
-| [StrataScratch - Youtube](https://www.notion.so/StrataScratch-Youtube-f53c524bc8ec4a879e6d8aed77c9981d?pvs=21)| Practice|
-| [Crack Concepts SQL](https://www.notion.so/Crack-Concepts-SQL-ece4135e70eb4f55a22af2421dcb943c?pvs=21)   | Practice|
-| [Ankit Bansal - SQL](https://www.notion.so/Ankit-Bansal-SQL-a3d3bfbebb924c63a83f0314a2d39785?pvs=21)   | Practice|
-| [Tina Huang’s SQL Series](https://www.notion.so/Tina-Huang-s-SQL-Series-d7cf6fa23f414a0c88e829edc52d978c?pvs=21) | Practice|
+| [MySQL Playlist by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl)| Practice|
+| [DataLemur](https://datalemur.com/)                    | Interview|
+| [StrataScatch](https://www.stratascratch.com/blog/categories/sql/)              | Interview|
+| [DataFord Io](https://dataford.io/sql)                  | Interview|
+| [LeetCode](https://leetcode.com/problemset/database/)                        | Interview|
+| [Hackerrank](https://www.hackerrank.com/domains/sql)                    | Interview|
+| [Analyst Builder](https://www.analystbuilder.com/questions)         | Interview|
+| [Mode Analytics](https://mode.com/sql-tutorial/introduction-to-sql/)            | Practice|
+| [SQLZoo](https://sqlzoo.net/wiki/SQL_Tutorial)                            | Practice|
+| [W3Resources](https://www.w3resource.com/sql-exercises/subqueries/index.php)                    | Practice|
+| [GeeksForGeeks](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)              | Practice|
+| [SQL Interview Prep - GitHub](https://github.com/Aafreen29/SQL-Interview-Prep-Question) | Interview|
+| [8 Week SQL Challenge](https://8weeksqlchallenge.com/)| Practice|
+| [Clever Programming SQL Interview Questions](https://thecleverprogrammer.com/2023/07/19/sql-interview-questions-for-data-science/)| Interview|
+| [StrataScratch - Youtube](https://www.youtube.com/playlist?list=PLv6MQO1Zzdmq5w4YkdkWyW8AaWatSQ0kX)| Practice|
+| [Crack Concepts SQL](https://www.youtube.com/@crackconcepts)   | Practice|
+| [Ankit Bansal - SQL](https://www.youtube.com/@ankitbansal6)   | Practice|
+| [Tina Huang’s SQL Series](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA) | Practice|
 
 ## Module 1 - Data Analysis
 
