@@ -69,11 +69,11 @@ Exclude any value below lower_limit and exclude any value above upper_limit
 
 For ex - This below is non linear because we cant draw a line between most of the data.
 
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cc6fa24a-6a2f-4d45-9dc5-d7a1318293d1/download.png
+![image](assets/UnivRatingVsCGPA.png)
 
 But for the below, it shows a linear relationship between CGPA and GRE Score
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9d33f6d7-f330-4c75-a480-0e5bc14c46a7/download_(1).png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9d33f6d7-f330-4c75-a480-0e5bc14c46a7/download_(1).png)
+![image](assets/GreVsCGPA.png)
 
 So lmplots or regplots are significant for drawing a linear relationship between 2 variables
 
