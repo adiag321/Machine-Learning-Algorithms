@@ -1,9 +1,7 @@
 # Machine-Learning-Algorithms
  In this repository, I have curated all the materials I used to study Machine learning Algorithms.
 
-### General Resources to Follow:
-
-# FreeCodeCamp Website
+## General Resources to Follow:
 
 | Service               | Link                                                                                            |
 |-----------------------|-------------------------------------------------------------------------------------------------|
@@ -16,6 +14,7 @@
 | Coursera              | [Coursera](https://www.notion.so/Coursera-707788edbb434beb944cf75b07a73df1?pvs=21) |
 | Kaggle                | [Kaggle](https://www.notion.so/Kaggle-4fbcd705c76e4e5bb7341e87027bb599?pvs=21) |
 | Datacamp              | [Datacamp](https://www.notion.so/Datacamp-9398400077944de18f61943640d014ce?pvs=21) |
+| Great Learning Platform | [Great Learning](https://www.greatlearning.in/)
 
 
 ## Module 1 - Data Analysis
