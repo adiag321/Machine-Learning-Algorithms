@@ -3,7 +3,7 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 
 ![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
 
-## 1. PLATFORM TO LEARN DATA SCIENCE:
+## PLATFORM TO LEARN DATA SCIENCE:
 - [Great Learning](https://www.greatlearning.in/)
 - [Udemy Online Courses](https://www.udemy.com/home/my-courses/learning/)
 - [EDX](https://courses.edx.org/dashboard#)
@@ -14,6 +14,11 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 - [Khan Academy](https://www.khanacademy.org/)
 - [FreeCodeCamp Learning](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success#)
 - [UpGrad Learning](https://www.notion.so/UpGrad-Learning-5b6c7b338fd2425e983f7052f5e4279c?pvs=21)
+
+## 1. PROBABILITY AND STATISTICS:
+
+- [Introduction to Probability](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/)
+
 
 ## 2. SQL:
 
@@ -39,7 +44,11 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 - [SQLZoo: SQL Tutorial](https://sqlzoo.net/wiki/SQL_Tutorial)
 - [W3Resources: SQL Exercises](https://www.w3resource.com/sql-exercises/)
 
-### 3. Machine Learning:
+#### GENERAL RESOURCES:
+- [5 Common SQL Interview Problems for Data Scientists](https://towardsdatascience.com/5-common-sql-interview-problems-for-data-scientists-1bfa02d8bae6)
+
+
+## 3. MACHINE LEARNING:
 
 #### INTERVIEW:
 - [Data Science Interviews by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVPkl7oRvzyNnyj1HS4wt2K-)
@@ -47,15 +56,56 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 #### PRACTICE:
 - [Unsupervised Machine Learning by Cognitive Class (Project Based)](https://cognitiveclass.ai/learn/unsupervised-machine-learning)
 
+## CLASSICAL MACHINE LEARNING ALGORITHMS
+- [All Learning Algorithms Explained in 14 Minutes](https://www.youtube.com/watch?v=BT6Aw6Q75Yg)
 
-## Module 1 - Data Analysis
+### A. Linear Regression
 
-## Module 2 - Machine Learning
+- [30 Questions to test a Data Scientist on Linear Regression](https://www.analyticsvidhya.com/blog/2017/07/30-questions-to-test-a-data-scientist-on-linear-regression/)
+- [Linear Regression - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=E5RjzSK0fvY)
+- [5 Types of Regression and their properties](https://towardsdatascience.com/5-types-of-regression-and-their-properties-c5e1fa12d55e)
+- [Ridge Regression - Clearly Explained](https://www.youtube.com/watch?v=Q81RR3yKn30)
+- [Lasso Regression - Clearly Explained](https://www.youtube.com/watch?v=NGf0voTMlcs)
 
-## Module 3 - Model Deployment
+### B. Logistic Regression
 
+- [All about Logistic Regression in one article](https://towardsdatascience.com/logistic-regression-b0af09cdb8ad)  
+- [Understanding Logistic Regression step-by-step](https://towardsdatascience.com/understanding-logistic-regression-step-by-step-704a78be7e0a)  
+- [Logistic Regression - Short and Clear Explanation - 9 Mins](https://www.youtube.com/watch?v=yIYKR4sgzI8) 
+- [Linear Regression vs Logistic Regression](https://www.youtube.com/watch?v=OCwZyYH14uw) 
+- [30 Questions to test a Data Scientist on Logistic Regression](https://www.analyticsvidhya.com/blog/2017/08/skilltest-logistic-regression/)  
+- [Logistic Regression - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=VCJdg7YBbAQ) 
+- [Lasso, Ridge and Logistic Regression all in one video](https://www.youtube.com/live/vaQxdBEcBzU?si=3judBH9xcRefRwGP) 
 
-## Module 4 - Deep Learning
+### C. Tree Based/Ensemble Algorithms
+
+- [30 Questions to test a Data Scientist on Tree based models](https://www.analyticsvidhya.com/blog/2017/09/30-questions-test-tree-based-models/) 
+- [Gini-index v/s Information Entropy](https://towardsdatascience.com/gini-index-vs-information-entropy-7a7e4fed3fcb) 
+- [Decision Tree vs. Random Forest – Which Algorithm Should you Use?](https://www.analyticsvidhya.com/blog/2020/05/decision-tree-vs-random-forest-algorithm/) 
+- [Why Random Forest doesn't work well for Time-Series?](https://medium.com/datadriveninvestor/why-wont-time-series-data-and-random-forests-work-very-well-together-3c9f7b271631) 
+- [Comprehensive guide to Ensemble Models](https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-for-ensemble-models/) 
+- [The Simple Math behind 3 Decision Tree Splitting criterions](https://mlwhiz.com/blog/2019/11/12/dtsplits/) 
+
+### D. K-Nearest-Neighbors
+
+- [Fundamental Interview Questions on KNN - A Quick refresh](http://theprofessionalspoint.blogspot.com/2019/01/knn-algorithm-in-machine-learning.html) 
+- [30 Questions to test a Data Scientist on KNN](https://www.analyticsvidhya.com/blog/2017/09/30-questions-test-k-nearest-neighbors-algorithm/) 
+- [Pros and Cons of KNN](https://www.fromthegenesis.com/pros-and-cons-of-k-nearest-neighbors/) 
+- [KNN Algorithm - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=6kZ-OPLNcgE) 
+
+### E. Support Vector Machines
+
+- [All about SVMs - Math, Terminology, Intuition, Kernels in one article](https://towardsdatascience.com/support-vector-machines-svm-c9ef22815589) 
+- [25 Questions to test a Data Scientist on SVMs](https://www.analyticsvidhya.com/blog/2017/10/svm-skilltest/) 
+
+### F. Naive Bayes
+
+- [12 tips to make most out of Naive Bayes](https://machinelearningmastery.com/better-naive-bayes/) 
+- [Naive Bayes - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=vz_xuxYS2PM) 
+- [6 easy steps to learn Naive Bayes](https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/) 
+
+***
+
 
 
 
