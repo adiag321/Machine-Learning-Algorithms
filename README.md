@@ -4,21 +4,29 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 ![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
 
 ## Resources to Follow
-### 1. General Platforms:
+### 1. Platforms to Learn Data Science:
 
-| Platform                                                                                            |
-|-------------------------------------------------------------------------------------------------|
-| [FreeCodeCamp Learning](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success#)
-| [UpGrad Learning](https://www.notion.so/UpGrad-Learning-5b6c7b338fd2425e983f7052f5e4279c?pvs=21) |
-| [Analytics Vidhya Website](https://courses.analyticsvidhya.com/enrollments) |
-| [Udacity Learning Platform](https://classroom.udacity.com/me) |
-| [Khan Academy](https://www.khanacademy.org/) |
-| [Udemy Online Courses](https://www.udemy.com/home/my-courses/learning/) |
-| [EDX](https://courses.edx.org/dashboard#) |
-| [Coursera](https://www.coursera.org/) |
-| [Kaggle](https://www.kaggle.com/learn) |
-| [Great Learning](https://www.greatlearning.in/) |
+- [FreeCodeCamp Learning](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success#)
+- [UpGrad Learning](https://www.notion.so/UpGrad-Learning-5b6c7b338fd2425e983f7052f5e4279c?pvs=21)
+- [Analytics Vidhya Website](https://courses.analyticsvidhya.com/enrollments)
+- [Udacity Learning Platform](https://classroom.udacity.com/me)
+- [Khan Academy](https://www.khanacademy.org/)
+- [Udemy Online Courses](https://www.udemy.com/home/my-courses/learning/)
+- [EDX](https://courses.edx.org/dashboard#)
+- [Coursera](https://www.coursera.org/)
+- [Kaggle](https://www.kaggle.com/learn)
+- [Great Learning](https://www.greatlearning.in/)
 
+FreeCodeCamp Learning
+UpGrad Learning
+Analytics Vidhya Website
+Udacity Learning Platform
+Khan Academy
+Udemy Online Courses
+EDX
+Coursera
+Kaggle
+Great Learning
 ### 2. SQL:
 
 | Platform                                                                                                    | Type      |
