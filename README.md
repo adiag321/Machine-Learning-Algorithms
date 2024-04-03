@@ -1,9 +1,9 @@
 ## <p align="center">RESOURCES TO LEARN MACHINE LEARNING ALGORITHMS</p>
-In this repository, I have curated all the materialsone can use to study SQL, Data Analysis, Python and Machine learning Algorithms.
+In this repository, I have curated all the materials one can use to study SQL, Data Analysis, and Machine learning Algorithms.
 
 ![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
 
-## PLATFORM TO LEARN DATA SCIENCE:
+### PLATFORM TO LEARN DATA SCIENCE:
 - [Great Learning](https://www.greatlearning.in/)
 - [Udemy Online Courses](https://www.udemy.com/home/my-courses/learning/)
 - [EDX](https://courses.edx.org/dashboard#)
@@ -15,12 +15,12 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 - [FreeCodeCamp Learning](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success#)
 - [UpGrad Learning](https://www.notion.so/UpGrad-Learning-5b6c7b338fd2425e983f7052f5e4279c?pvs=21)
 
-## 1. PROBABILITY AND STATISTICS:
+### 1. PROBABILITY AND STATISTICS:
 
 - [Introduction to Probability](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/)
 
 
-## 2. SQL:
+### 2. SQL:
 
 #### INTERVIEW:
 - [DataLemur](https://datalemur.com/)
@@ -48,7 +48,7 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 - [5 Common SQL Interview Problems for Data Scientists](https://towardsdatascience.com/5-common-sql-interview-problems-for-data-scientists-1bfa02d8bae6)
 
 
-## 3. MACHINE LEARNING:
+### 3. MACHINE LEARNING:
 
 #### INTERVIEW:
 - [Data Science Interviews by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVPkl7oRvzyNnyj1HS4wt2K-)
@@ -56,7 +56,7 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 #### PRACTICE:
 - [Unsupervised Machine Learning by Cognitive Class (Project Based)](https://cognitiveclass.ai/learn/unsupervised-machine-learning)
 
-## CLASSICAL MACHINE LEARNING ALGORITHMS
+### 4. CLASSICAL MACHINE LEARNING ALGORITHMS
 - [All Learning Algorithms Explained in 14 Minutes](https://www.youtube.com/watch?v=BT6Aw6Q75Yg)
 
 ### A. Linear Regression
@@ -104,8 +104,17 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 - [Naive Bayes - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=vz_xuxYS2PM) 
 - [6 easy steps to learn Naive Bayes](https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/) 
 
-***
 
+### 5. CASE STUDIES:
 
-
+- [Dawn of Taxi Aggregators](https://www.analyticsvidhya.com/blog/2016/04/case-study-analytics-interviews-dawn-taxi-aggregators/) 
+- [Optimizing product prices for an online vendor](https://www.analyticsvidhya.com/blog/2016/07/solving-case-study-optimize-products-price-online-vendor-level-hard/) 
+- [Tips for a Case-Study Interview](https://workera.ai/resources/data-science-case-study-interview/) 
+- [Mercari Price Prediction](https://towardsdatascience.com/a-data-science-case-study-with-python-mercari-price-prediction-4e852d95654) 
+- [End-to-End multiclass Text Classification pipeline](https://mlwhiz.com/blog/2020/05/24/multitextclass/) 
+- [End-to-End multiclass Image Classification pipeline](https://mlwhiz.com/blog/2020/06/06/multiclass_image_classification_pytorch/) 
+- [Large Scale Forecasting for 1000+ products - Nagarro](https://www.youtube.com/watch?v=8jfDBD6xlFM)
+- [Clustering and Classification in E-Commerce](https://lucidworks.com/post/clustering-classification-supervised-unsupervised-learning-ecommerce/) 
+- [The ABCs of Learning to Rank](https://lucidworks.com/post/abcs-learning-to-rank/) 
+- [Data Science Case Study: Optimizing Product Placement in Retail ](https://towardsdatascience.com/data-science-case-study-optimizing-product-placement-in-retail-part-1-2e8b27e16e8d) 
 
