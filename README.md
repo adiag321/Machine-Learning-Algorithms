@@ -1,4 +1,4 @@
-# <A ALIGN='CENTER'>RESOURCES TO LEARN MACHINE LEARNING ALGORITHMS</A>
+## <A ALIGN='CENTER'>RESOURCES TO LEARN MACHINE LEARNING ALGORITHMS</A>
 In this repository, I have curated all the materialsone can use to study SQL, Data Analysis, Python and Machine learning Algorithms.
 
 ![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
@@ -45,11 +45,9 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 ### 3. Machine Learning:
 
 #### INTERVIEW:
-
 - [Data Science Interviews by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVPkl7oRvzyNnyj1HS4wt2K-)
 
 #### PRACTICE:
-
 - [Unsupervised Machine Learning by Cognitive Class (Project Based)](https://cognitiveclass.ai/learn/unsupervised-machine-learning)
 
 
