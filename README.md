@@ -1,4 +1,4 @@
-#<A ALIGN='CENTER'>RESOURCES TO LEARN MACHINE LEARNING ALGORITHMS</A>
+# <A ALIGN='CENTER'>RESOURCES TO LEARN MACHINE LEARNING ALGORITHMS</A>
 In this repository, I have curated all the materialsone can use to study SQL, Data Analysis, Python and Machine learning Algorithms.
 
 ![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
@@ -18,7 +18,7 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 
 ## 2. SQL:
 
-### INTERVIEW:
+#### INTERVIEW:
 
 - [DataLemur](https://datalemur.com/)
 - [StrataScatch](https://www.stratascratch.com/blog/categories/sql/)
@@ -29,47 +29,29 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 - [SQL Interview Prep - GitHub](https://github.com/Aafreen29/SQL-Interview-Prep-Question)
 - [Clever Programming SQL Interview Questions](https://thecleverprogrammer.com/2023/07/19/sql-interview-questions-for-data-science/)
 
-### Practice:
+#### PRACTICE:
 
-- [MySQL Playlist by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl)
-- [Mode Analytics](https://mode.com/sql-tutorial/introduction-to-sql/)
-- [SQLZoo](https://sqlzoo.net/wiki/SQL_Tutorial)
-- [W3Resources](https://www.w3resource.com/sql-exercises/subqueries/index.php)
-- [GeeksForGeeks 30 Days of SQL Basic to Advance](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)
-- [Data with Danny: 8 Week SQL Challenge](https://8weeksqlchallenge.com/)
+- [GeeksForGeeks: 30 Days of SQL Basic to Advance](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)
 - [StrataScratch - Youtube](https://www.youtube.com/playlist?list=PLv6MQO1Zzdmq5w4YkdkWyW8AaWatSQ0kX)
 - [Crack Concepts SQL](https://www.youtube.com/@crackconcepts)
 - [Ankit Bansal - SQL](https://www.youtube.com/@ankitbansal6)
 - [Tina Huang’s SQL Series](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA)
-
-| Platform                                                                                                    | Type      |
-|---------------------------------------------------------------------------------------------------------|-----------|
-| [MySQL Playlist by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl)| Practice|
-| [DataLemur](https://datalemur.com/)                    | Interview|
-| [StrataScatch](https://www.stratascratch.com/blog/categories/sql/)              | Interview|
-| [DataFord Io](https://dataford.io/sql)                  | Interview|
-| [LeetCode](https://leetcode.com/problemset/database/)                        | Interview|
-| [Hackerrank](https://www.hackerrank.com/domains/sql)                    | Interview|
-| [Analyst Builder](https://www.analystbuilder.com/questions)         | Interview|
-| [Mode Analytics](https://mode.com/sql-tutorial/introduction-to-sql/)            | Practice|
-| [SQLZoo](https://sqlzoo.net/wiki/SQL_Tutorial)                            | Practice|
-| [W3Resources](https://www.w3resource.com/sql-exercises/subqueries/index.php)                    | Practice|
-| [GeeksForGeeks 30 Days of SQL Basic to Advance](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)              | Practice|
-| [SQL Interview Prep - GitHub](https://github.com/Aafreen29/SQL-Interview-Prep-Question) | Interview|
-| [Data with Danny: 8 Week SQL Challenge](https://8weeksqlchallenge.com/)| Practice|
-| [Clever Programming SQL Interview Questions](https://thecleverprogrammer.com/2023/07/19/sql-interview-questions-for-data-science/)| Interview|
-| [StrataScratch - Youtube](https://www.youtube.com/playlist?list=PLv6MQO1Zzdmq5w4YkdkWyW8AaWatSQ0kX)| Practice|
-| [Crack Concepts SQL](https://www.youtube.com/@crackconcepts)   | Practice|
-| [Ankit Bansal - SQL](https://www.youtube.com/@ankitbansal6)   | Practice|
-| [Tina Huang’s SQL Series](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA) | Practice|
-
-
+- [Data with Danny: 8 Week SQL Challenge](https://8weeksqlchallenge.com/)
+- [MySQL Playlist by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl)
+- [Intro to SQL by Mode Analytics](https://mode.com/sql-tutorial/introduction-to-sql/)
+- [SQLZoo: SQL Tutorial](https://sqlzoo.net/wiki/SQL_Tutorial)
+- [W3Resources: SQL Exercises](https://www.w3resource.com/sql-exercises/)
 
 ### 3. Machine Learning:
-| Platform                                                                                                          | Type      |
-|--------------------------------------------------------------------------------------------------------------------|-----------|
-| [Data Science Interviews by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVPkl7oRvzyNnyj1HS4wt2K-)| Interview |
-| [Unsupervised Machine Learning by Cognitive Class (Project Based)](https://cognitiveclass.ai/learn/unsupervised-machine-learning)| Practice |
+
+#### INTERVIEW:
+
+- [Data Science Interviews by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVPkl7oRvzyNnyj1HS4wt2K-)
+
+#### PRACTICE:
+
+- [Unsupervised Machine Learning by Cognitive Class (Project Based)](https://cognitiveclass.ai/learn/unsupervised-machine-learning)
+
 
 ## Module 1 - Data Analysis
 
