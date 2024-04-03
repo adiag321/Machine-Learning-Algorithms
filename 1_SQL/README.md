@@ -1,3 +1,5 @@
+## <p align="center">SQL</p>
+
 
 * [Finding Data Queries](#finding-data-queries)
 * [Data Modification Queries](#data-modification-queries)
