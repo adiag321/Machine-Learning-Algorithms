@@ -1,6 +1,8 @@
 # Machine-Learning-Algorithms
 In this repository, I have curated all the materialsone can use to study SQL, Data Analysis, Python and Machine learning Algorithms.
 
+![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
+
 ## Resources to Follow
 ### 1. General Platforms:
 
