@@ -4,7 +4,6 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 ![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
 
 ## 1. PLATFORM TO LEARN DATA SCIENCE:
-
 - [Great Learning](https://www.greatlearning.in/)
 - [Udemy Online Courses](https://www.udemy.com/home/my-courses/learning/)
 - [EDX](https://courses.edx.org/dashboard#)
@@ -19,7 +18,6 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 ## 2. SQL:
 
 #### INTERVIEW:
-
 - [DataLemur](https://datalemur.com/)
 - [StrataScatch](https://www.stratascratch.com/blog/categories/sql/)
 - [DataFord Io](https://dataford.io/sql)
@@ -30,7 +28,6 @@ In this repository, I have curated all the materialsone can use to study SQL, Da
 - [Clever Programming SQL Interview Questions](https://thecleverprogrammer.com/2023/07/19/sql-interview-questions-for-data-science/)
 
 #### PRACTICE:
-
 - [GeeksForGeeks: 30 Days of SQL Basic to Advance](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)
 - [StrataScratch - Youtube](https://www.youtube.com/playlist?list=PLv6MQO1Zzdmq5w4YkdkWyW8AaWatSQ0kX)
 - [Crack Concepts SQL](https://www.youtube.com/@crackconcepts)
