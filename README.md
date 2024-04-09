@@ -31,6 +31,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Analyst Builder](https://www.analystbuilder.com/questions)
 - [SQL Interview Prep - GitHub](https://github.com/Aafreen29/SQL-Interview-Prep-Question)
 - [Clever Programming SQL Interview Questions](https://thecleverprogrammer.com/2023/07/19/sql-interview-questions-for-data-science/)
+- [SQL Interview Query Questions](https://www.interviewquery.com/questions?searchQuery=&searchQuestionTag=&searchCompany=&ordering=Recommended&orderingDirection=ASC&pageSize=20&page=0)
 
 #### PRACTICE:
 - [GeeksForGeeks: 30 Days of SQL Basic to Advance](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)
