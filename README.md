@@ -70,6 +70,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 
 ### B. Logistic Regression
 
+- [Logistic Regression Indepth Maths Intuition In Hindi by Krish Naik](https://www.youtube.com/watch?v=_nvQKN8L1ZE&ab_channel=KrishNaikHindi)
 - [All about Logistic Regression in one article](https://towardsdatascience.com/logistic-regression-b0af09cdb8ad)  
 - [Understanding Logistic Regression step-by-step](https://towardsdatascience.com/understanding-logistic-regression-step-by-step-704a78be7e0a)  
 - [Logistic Regression - Short and Clear Explanation - 9 Mins](https://www.youtube.com/watch?v=yIYKR4sgzI8) 
