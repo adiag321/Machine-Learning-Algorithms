@@ -20,16 +20,6 @@ To train a logistic regression model, we can use the `LogisticRegression` class 
 - Evaluating a model using a validation set and test set
 - Saving a model to disk and loading it back
 
-
-
-Check out the following resources to learn more:
-
-* https://www.youtube.com/watch?v=-la3q9d7AKQ&list=PLNeKWBMsAzboR8vvhnlanxCNr2V7ITuxy&index=1
-* https://www.kaggle.com/prashant111/extensive-analysis-eda-fe-modelling
-* https://www.kaggle.com/willkoehrsen/start-here-a-gentle-introduction#Baseline
-* https://jovian.ai/aakashns/03-logistic-regression
-
-
 Try training logistic regression models on the following datasets:
 
 - [Breast cancer detection](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data): Predicting whether a tumor  is "benign" (noncancerous) or "malignant" (cancerous) using information like its radius, texture etc.

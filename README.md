@@ -31,9 +31,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Analyst Builder](https://www.analystbuilder.com/questions)
 - [SQL Interview Prep - GitHub](https://github.com/Aafreen29/SQL-Interview-Prep-Question)
 - [Clever Programming SQL Interview Questions](https://thecleverprogrammer.com/2023/07/19/sql-interview-questions-for-data-science/)
-<<<<<<< Updated upstream
 - [SQL Interview Query Questions](https://www.interviewquery.com/questions?searchQuery=&searchQuestionTag=&searchCompany=&ordering=Recommended&orderingDirection=ASC&pageSize=20&page=0)
-=======
 - [David Langer’s YouTube Channel](https://www.youtube.com/channel/UCRhUp6SYaJ7zme4Bjwt28DQ)
 - [Ken Jee’s Simple SQL Fundamentals](https://www.youtube.com/watch?v=WKXtTo7lqmA)
 - [Tina Huang’s SQL Series](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA)
@@ -41,7 +39,6 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Data Science Jay’s SQL Mock Interview](https://www.youtube.com/watch?v=LcVz8wSM-AM)
 - [Edureka Top 65 SQL Interview Questions and Answers](https://www.youtube.com/watch?v=-WEpWH1NHGU)
 - [Top 23 SQL Interview Questions](https://youtu.be/l_dph6Qu4LA)
->>>>>>> Stashed changes
 
 #### PRACTICE:
 - [GeeksForGeeks: 30 Days of SQL Basic to Advance](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)
