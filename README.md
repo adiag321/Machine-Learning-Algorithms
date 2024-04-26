@@ -43,11 +43,11 @@ In this repository, I have curated all the materials one can use to study SQL, D
 #### PRACTICE:
 - [GeeksForGeeks: 30 Days of SQL Basic to Advance](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)
 - [StrataScratch - Youtube](https://www.youtube.com/playlist?list=PLv6MQO1Zzdmq5w4YkdkWyW8AaWatSQ0kX)
-- [Crack Concepts SQL](https://www.youtube.com/@crackconcepts)
-- [Ankit Bansal - SQL](https://www.youtube.com/@ankitbansal6)
-- [Tina Huang’s SQL Series](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA)
+- [Crack Concepts SQL - Youtube Channel](https://www.youtube.com/@crackconcepts)
+- [Ankit Bansal - SQL - Youtube Channel](https://www.youtube.com/@ankitbansal6)
+- [Tina Huang’s SQL Series - Youtube Channel](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA)
 - [Data with Danny: 8 Week SQL Challenge](https://8weeksqlchallenge.com/)
-- [MySQL Playlist by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl)
+- [MySQL Playlist by Krish Naik - Youtube Channel](https://www.youtube.com/playlist?list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl)
 - [Intro to SQL by Mode Analytics](https://mode.com/sql-tutorial/introduction-to-sql/)
 - [SQLZoo: SQL Tutorial](https://sqlzoo.net/wiki/SQL_Tutorial)
 - [W3Resources: SQL Exercises](https://www.w3resource.com/sql-exercises/)
@@ -80,11 +80,11 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Logistic Regression Indepth Maths Intuition In Hindi by Krish Naik](https://www.youtube.com/watch?v=_nvQKN8L1ZE&ab_channel=KrishNaikHindi)
 - [All about Logistic Regression in one article](https://towardsdatascience.com/logistic-regression-b0af09cdb8ad)  
 - [Understanding Logistic Regression step-by-step](https://towardsdatascience.com/understanding-logistic-regression-step-by-step-704a78be7e0a)  
-- [Logistic Regression - Short and Clear Explanation - 9 Mins](https://www.youtube.com/watch?v=yIYKR4sgzI8) 
-- [Linear Regression vs Logistic Regression](https://www.youtube.com/watch?v=OCwZyYH14uw) 
+- [Logistic Regression - Short and Clear Explanation - 9 Mins: Video](https://www.youtube.com/watch?v=yIYKR4sgzI8) 
+- [Linear Regression vs Logistic Regression: Video](https://www.youtube.com/watch?v=OCwZyYH14uw) 
 - [30 Questions to test a Data Scientist on Logistic Regression](https://www.analyticsvidhya.com/blog/2017/08/skilltest-logistic-regression/)  
-- [Logistic Regression - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=VCJdg7YBbAQ) 
-- [Lasso, Ridge and Logistic Regression all in one video](https://www.youtube.com/live/vaQxdBEcBzU?si=3judBH9xcRefRwGP) 
+- [Logistic Regression - Understand Everything (Theory + Maths + Coding): Video](https://www.youtube.com/watch?v=VCJdg7YBbAQ) 
+- [Lasso, Ridge and Logistic Regression: Video](https://www.youtube.com/live/vaQxdBEcBzU?si=3judBH9xcRefRwGP) 
 
 ### C. Tree Based/Ensemble Algorithms
 
