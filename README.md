@@ -20,7 +20,12 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Introduction to Probability](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/)
 
 
-### 2. SQL:
+### 2. PYTHON:
+
+- [Python for Data Analysis by DataDraft - Youtube Playlist](https://www.youtube.com/playlist?list=PLiC1doDIe9rCYWmH9wIEYEXXaJ4KAi3jc)
+
+
+### 3. SQL:
 
 #### INTERVIEW:
 - [DataLemur](https://datalemur.com/)
@@ -56,7 +61,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [5 Common SQL Interview Problems for Data Scientists](https://towardsdatascience.com/5-common-sql-interview-problems-for-data-scientists-1bfa02d8bae6)
 
 
-### 3. MACHINE LEARNING:
+### 4. MACHINE LEARNING:
 
 #### INTERVIEW:
 - [Data Science Interviews by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVPkl7oRvzyNnyj1HS4wt2K-)
@@ -64,7 +69,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 #### PRACTICE:
 - [Unsupervised Machine Learning by Cognitive Class (Project Based)](https://cognitiveclass.ai/learn/unsupervised-machine-learning)
 
-### 4. CLASSICAL MACHINE LEARNING ALGORITHMS
+### 5. CLASSICAL MACHINE LEARNING ALGORITHMS
 - [All Learning Algorithms Explained in 14 Minutes](https://www.youtube.com/watch?v=BT6Aw6Q75Yg)
 
 ### A. Linear Regression
@@ -114,7 +119,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [6 easy steps to learn Naive Bayes](https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/) 
 
 
-### 5. CASE STUDIES:
+### 6. CASE STUDIES:
 
 - [Dawn of Taxi Aggregators](https://www.analyticsvidhya.com/blog/2016/04/case-study-analytics-interviews-dawn-taxi-aggregators/) 
 - [Optimizing product prices for an online vendor](https://www.analyticsvidhya.com/blog/2016/07/solving-case-study-optimize-products-price-online-vendor-level-hard/) 
