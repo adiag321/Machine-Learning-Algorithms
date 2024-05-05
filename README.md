@@ -36,12 +36,13 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Siddhardhan](https://www.youtube.com/c/Siddhardhan/videos)
 - [The Data Scientist Show by Daliana Liu - DATA PODCAST](https://www.youtube.com/@TheDataScientistShow/videos)
 
+--------------
 ### <a id="statistics"></a>1. PROBABILITY AND STATISTICS:
 
 - [Introduction to Probability](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/)
 
 #### [Go to Top](#top)
-
+--------------
 ### <a id="python"></a>2. PYTHON:
 
 - [Python for Data Analysis by DataDraft - Youtube Playlist](https://www.youtube.com/playlist?list=PLiC1doDIe9rCYWmH9wIEYEXXaJ4KAi3jc)
