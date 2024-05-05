@@ -1,14 +1,21 @@
 ## <p align="center">RESOURCES TO LEARN MACHINE LEARNING ALGORITHMS </p>
-
-<!-- Anchor tag for top of the page -->
-<a id="top"></a>
-
 In this repository, I have curated all the materials one can use to study SQL, Data Analysis, and Machine learning Algorithms.
 
 ![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
+<a id="top"></a>
+
+### Table of Contents
+1. [Platforms to Learn Data Science](#platforms)
+2. [YouTubers/Playlists to Follow](#youtubers)
+3. [Probability and Statistics](#statistics)
+4. [Python](#python)
+5. [SQL](#sql)
+6. [Machine Learning](#machine-learning)
+7. [Classical Machine Learning Algorithms](#classical-ml)
+8. [Case Studies](#case-studies)
 
 --------------
-### PLATFORMS TO LEARN DATA SCIENCE:
+### <a id="platforms"></a>PLATFORMS TO LEARN DATA SCIENCE:
 - [Great Learning](https://www.greatlearning.in/)
 - [Udemy Online Courses](https://www.udemy.com/home/my-courses/learning/)
 - [EDX](https://courses.edx.org/dashboard#)
@@ -20,8 +27,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [FreeCodeCamp Learning](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success#)
 - [UpGrad Learning](https://www.notion.so/UpGrad-Learning-5b6c7b338fd2425e983f7052f5e4279c?pvs=21)
   
---------------
-### YOUTUBERS/PLAYLISTS TO FOLLOW:
+### <a id="youtubers"></a>YOUTUBERS/PLAYLISTS TO FOLLOW:
 - [KRISH NAIK COMPLETE MACHINE LEARNING PLAYLISTS](https://www.youtube.com/playlist?list=PLZoTAELRMXVPBTrWtJkn3wWQxZkmTXGwe)
 - [CampusX](https://www.youtube.com/@campusx-official/playlists)
 - [DATA SCHOOL](https://www.youtube.com/channel/UCnVzApLJE2ljPZSeQylSEyg/videos)
@@ -30,21 +36,21 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Siddhardhan](https://www.youtube.com/c/Siddhardhan/videos)
 - [The Data Scientist Show by Daliana Liu - DATA PODCAST](https://www.youtube.com/@TheDataScientistShow/videos)
 
---------------
-### 1. PROBABILITY AND STATISTICS:
+### <a id="statistics"></a>1. PROBABILITY AND STATISTICS:
 
 - [Introduction to Probability](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/)
 
-[Go to Top](#top)
---------------
-### 2. PYTHON:
+#### [Go to Top](#top)
+
+### <a id="python"></a>2. PYTHON:
 
 - [Python for Data Analysis by DataDraft - Youtube Playlist](https://www.youtube.com/playlist?list=PLiC1doDIe9rCYWmH9wIEYEXXaJ4KAi3jc)
 - [Corey Schafer - Youtube Channel](https://www.youtube.com/user/schafer5)
 - [Sentdex - Youtube Channel](https://www.youtube.com/user/sentdex)
 
+#### [Go to Top](#top)
 --------------
-### 3. SQL:
+### <a id="sql"></a>3. SQL:
 
 #### INTERVIEW:
 - [DataLemur](https://datalemur.com/)
@@ -79,8 +85,9 @@ In this repository, I have curated all the materials one can use to study SQL, D
 #### GENERAL RESOURCES:
 - [5 Common SQL Interview Problems for Data Scientists](https://towardsdatascience.com/5-common-sql-interview-problems-for-data-scientists-1bfa02d8bae6)
 
+#### [Go to Top](#top)
 --------------
-### 4. MACHINE LEARNING:
+### <a id="machine-learning"></a>4. MACHINE LEARNING:
 
 #### INTERVIEW:
 - [Data Science Interviews by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVPkl7oRvzyNnyj1HS4wt2K-)
@@ -89,12 +96,12 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [DATA SCIENCE FOR BEGINNERS BY CODEBASICS - YOUTUBE PLAYLIST](https://www.youtube.com/playlist?list=PLeo1K3hjS3us_ELKYSj_Fth2tIEkdKXvV)
 - [Unsupervised Machine Learning by Cognitive Class (Project Based)](https://cognitiveclass.ai/learn/unsupervised-machine-learning)
 
+#### [Go to Top](#top)
 --------------
-### 5. CLASSICAL MACHINE LEARNING ALGORITHMS
+### <a id="classical-ml"></a>5. CLASSICAL MACHINE LEARNING ALGORITHMS
 - [All Learning Algorithms Explained in 14 Minutes](https://www.youtube.com/watch?v=BT6Aw6Q75Yg)
 
 ### A. Linear Regression
-
 - [30 Questions to test a Data Scientist on Linear Regression](https://www.analyticsvidhya.com/blog/2017/07/30-questions-to-test-a-data-scientist-on-linear-regression/)
 - [Linear Regression - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=E5RjzSK0fvY)
 - [5 Types of Regression and their properties](https://towardsdatascience.com/5-types-of-regression-and-their-properties-c5e1fa12d55e)
@@ -102,7 +109,6 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Lasso Regression - Clearly Explained](https://www.youtube.com/watch?v=NGf0voTMlcs)
 
 ### B. Logistic Regression
-
 - [Logistic Regression In-depth Maths Intuition In Hindi by Krish Naik](https://www.youtube.com/watch?v=_nvQKN8L1ZE&ab_channel=KrishNaikHindi)
 - [All about Logistic Regression in one article](https://towardsdatascience.com/logistic-regression-b0af09cdb8ad)  
 - [Understanding Logistic Regression step-by-step](https://towardsdatascience.com/understanding-logistic-regression-step-by-step-704a78be7e0a)  
@@ -113,7 +119,6 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Lasso, Ridge and Logistic Regression: Video](https://www.youtube.com/live/vaQxdBEcBzU?si=3judBH9xcRefRwGP) 
 
 ### C. Tree-Based/Ensemble Algorithms
-
 - [30 Questions to test a Data Scientist on Tree based models](https://www.analyticsvidhya.com/blog/2017/09/30-questions-test-tree-based-models/) 
 - [Gini-index v/s Information Entropy](https://towardsdatascience.com/gini-index-vs-information-entropy-7a7e4fed3fcb) 
 - [Decision Tree vs. Random Forest – Which Algorithm Should you Use?](https://www.analyticsvidhya.com/blog/2020/05/decision-tree-vs-random-forest-algorithm/) 
@@ -122,19 +127,16 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [The Simple Math behind 3 Decision Tree Splitting criteria](https://mlwhiz.com/blog/2019/11/12/dtsplits/) 
 
 ### D. K-Nearest-Neighbors
-
 - [Fundamental Interview Questions on KNN - A Quick refresh](http://theprofessionalspoint.blogspot.com/2019/01/knn-algorithm-in-machine-learning.html) 
 - [30 Questions to test a Data Scientist on KNN](https://www.analyticsvidhya.com/blog/2017/09/30-questions-test-k-nearest-neighbors-algorithm/) 
 - [Pros and Cons of KNN](https://www.fromthegenesis.com/pros-and-cons-of-k-nearest-neighbors/) 
 - [KNN Algorithm - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=6kZ-OPLNcgE) 
 
 ### E. Support Vector Machines
-
 - [All about SVMs - Math, Terminology, Intuition, Kernels in one article](https://towardsdatascience.com/support-vector-machines-svm-c9ef22815589) 
 - [25 Questions to test a Data Scientist on SVMs](https://www.analyticsvidhya.com/blog/2017/10/svm-skilltest/) 
 
 ### F. Naive Bayes
-
 - [12 tips to make the most out of Naive Bayes](https://machinelearningmastery.com/better-naive-bayes/) 
 - [Naive Bayes - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=vz_xuxYS2PM) 
 - [6 easy steps to learn Naive Bayes](https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/) 
@@ -142,8 +144,9 @@ In this repository, I have curated all the materials one can use to study SQL, D
 ### G. Feature Selection
 - [Awesome Feature Engineering for Machine Learning: GitHub](https://github.com/aikho/awesome-feature-engineering)
 
+#### [Go to Top](#top)
 --------------
-### 6. CASE STUDIES:
+### <a id="case-studies"></a>6. CASE STUDIES:
 The best way to approach such a question is to have a framework -
 1. Ask questions to narrow down the problem area
 2. Suggest and use feedback to decide on business metrics relevant to the problem
@@ -153,6 +156,9 @@ The best way to approach such a question is to have a framework -
 6. Explain how you would productionalize.
 6. Explain how you would A/B test the final model
 
+#### LEARNING:
+- [Product Case Interviews for Data Science Jobs by Emma Ding: Youtube Playlist](https://www.youtube.com/watch?v=QJat_nicj9c&list=PLY1Fi4XflWSvtu963rZpfH6WeX54vSrDW&index=3)
+  
 #### RESOURCES: 
 - [Dawn of Taxi Aggregators](https://www.analyticsvidhya.com/blog/2016/04/case-study-analytics-interviews-dawn-taxi-aggregators/) 
 - [Optimizing product prices for an online vendor](https://www.analyticsvidhya.com/blog/2016/07/solving-case-study-optimize-products-price-online-vendor-level-hard/) 
@@ -161,7 +167,8 @@ The best way to approach such a question is to have a framework -
 - [End-to-End multiclass Text Classification pipeline](https://mlwhiz.com/blog/2020/05/24/multitextclass/) 
 - [End-to-End multiclass Image Classification pipeline](https://mlwhiz.com/blog/2020/06/06/multiclass_image_classification_pytorch/) 
 - [Large Scale Forecasting for 1000+ products - Nagarro](https://www.youtube.com/watch?v=8jfDBD6xlFM)
-- [Clustering and Classification in E-Commerce](https://lucidworks.com/post/clustering-classification-supervised-unsupervised-learning-ecommerce/) 
+- [Clustering and Classification in E-Commerce](https://lucidworks.com/post/clustering-classification-supervised-unsupervised-learning-ecommerce/)
 - [The ABCs of Learning to Rank](https://lucidworks.com/post/abcs-learning-to-rank/) 
 - [Data Science Case Study: Optimizing Product Placement in Retail ](https://towardsdatascience.com/data-science-case-study-optimizing-product-placement-in-retail-part-1-2e8b27e16e8d) 
 
+#### [Go to Top](#top)
