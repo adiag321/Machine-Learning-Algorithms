@@ -1,9 +1,9 @@
-## <p align="center">RESOURCES TO LEARN MACHINE LEARNING ALGORITHMS</p>
+## <p align="center">RESOURCES TO LEARN MACHINE LEARNING ALGORITHMS </p>
 In this repository, I have curated all the materials one can use to study SQL, Data Analysis, and Machine learning Algorithms.
 
 ![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
 
-### PLATFORM TO LEARN DATA SCIENCE:
+### PLATFORMS TO LEARN DATA SCIENCE:
 - [Great Learning](https://www.greatlearning.in/)
 - [Udemy Online Courses](https://www.udemy.com/home/my-courses/learning/)
 - [EDX](https://courses.edx.org/dashboard#)
@@ -15,6 +15,15 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [FreeCodeCamp Learning](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success#)
 - [UpGrad Learning](https://www.notion.so/UpGrad-Learning-5b6c7b338fd2425e983f7052f5e4279c?pvs=21)
 
+### YOUTUBERS/PLAYLISTS TO FOLLOW:
+- [KRISH NAIK COMPLETE MACHINE LEARNING PLAYLISTS](https://www.youtube.com/playlist?list=PLZoTAELRMXVPBTrWtJkn3wWQxZkmTXGwe)
+- [CampusX](https://www.youtube.com/@campusx-official/playlists)
+- [DATA SCHOOL](https://www.youtube.com/channel/UCnVzApLJE2ljPZSeQylSEyg/videos)
+- [StatQuest with Josh Starmer](https://www.youtube.com/user/joshstarmer)
+- [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw/videos)
+- [Siddhardhan](https://www.youtube.com/c/Siddhardhan/videos)
+- [The Data Scientist Show by Daliana Liu - DATA PODCAST](https://www.youtube.com/@TheDataScientistShow/videos)
+  
 ### 1. PROBABILITY AND STATISTICS:
 
 - [Introduction to Probability](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/)
@@ -23,6 +32,8 @@ In this repository, I have curated all the materials one can use to study SQL, D
 ### 2. PYTHON:
 
 - [Python for Data Analysis by DataDraft - Youtube Playlist](https://www.youtube.com/playlist?list=PLiC1doDIe9rCYWmH9wIEYEXXaJ4KAi3jc)
+- [Corey Schafer - Youtube Channel](https://www.youtube.com/user/schafer5)
+- [Sentdex - Youtube Channel](https://www.youtube.com/user/sentdex)
 
 
 ### 3. SQL:
@@ -45,7 +56,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Edureka Top 65 SQL Interview Questions and Answers](https://www.youtube.com/watch?v=-WEpWH1NHGU)
 - [Top 23 SQL Interview Questions](https://youtu.be/l_dph6Qu4LA)
 
-#### PRACTICE:
+#### LEARNING:
 - [GeeksForGeeks: 30 Days of SQL Basic to Advance](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)
 - [StrataScratch - Youtube](https://www.youtube.com/playlist?list=PLv6MQO1Zzdmq5w4YkdkWyW8AaWatSQ0kX)
 - [Crack Concepts SQL - Youtube Channel](https://www.youtube.com/@crackconcepts)
@@ -60,13 +71,13 @@ In this repository, I have curated all the materials one can use to study SQL, D
 #### GENERAL RESOURCES:
 - [5 Common SQL Interview Problems for Data Scientists](https://towardsdatascience.com/5-common-sql-interview-problems-for-data-scientists-1bfa02d8bae6)
 
-
 ### 4. MACHINE LEARNING:
 
 #### INTERVIEW:
 - [Data Science Interviews by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVPkl7oRvzyNnyj1HS4wt2K-)
 
-#### PRACTICE:
+#### LEARNING:
+- [DATA SCIENCE FOR BEGINNERS BY CODEBASICS - YOUTUBE PLAYLIST](https://www.youtube.com/playlist?list=PLeo1K3hjS3us_ELKYSj_Fth2tIEkdKXvV)
 - [Unsupervised Machine Learning by Cognitive Class (Project Based)](https://cognitiveclass.ai/learn/unsupervised-machine-learning)
 
 ### 5. CLASSICAL MACHINE LEARNING ALGORITHMS
@@ -82,7 +93,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 
 ### B. Logistic Regression
 
-- [Logistic Regression Indepth Maths Intuition In Hindi by Krish Naik](https://www.youtube.com/watch?v=_nvQKN8L1ZE&ab_channel=KrishNaikHindi)
+- [Logistic Regression In-depth Maths Intuition In Hindi by Krish Naik](https://www.youtube.com/watch?v=_nvQKN8L1ZE&ab_channel=KrishNaikHindi)
 - [All about Logistic Regression in one article](https://towardsdatascience.com/logistic-regression-b0af09cdb8ad)  
 - [Understanding Logistic Regression step-by-step](https://towardsdatascience.com/understanding-logistic-regression-step-by-step-704a78be7e0a)  
 - [Logistic Regression - Short and Clear Explanation - 9 Mins: Video](https://www.youtube.com/watch?v=yIYKR4sgzI8) 
@@ -91,14 +102,14 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Logistic Regression - Understand Everything (Theory + Maths + Coding): Video](https://www.youtube.com/watch?v=VCJdg7YBbAQ) 
 - [Lasso, Ridge and Logistic Regression: Video](https://www.youtube.com/live/vaQxdBEcBzU?si=3judBH9xcRefRwGP) 
 
-### C. Tree Based/Ensemble Algorithms
+### C. Tree-Based/Ensemble Algorithms
 
 - [30 Questions to test a Data Scientist on Tree based models](https://www.analyticsvidhya.com/blog/2017/09/30-questions-test-tree-based-models/) 
 - [Gini-index v/s Information Entropy](https://towardsdatascience.com/gini-index-vs-information-entropy-7a7e4fed3fcb) 
 - [Decision Tree vs. Random Forest – Which Algorithm Should you Use?](https://www.analyticsvidhya.com/blog/2020/05/decision-tree-vs-random-forest-algorithm/) 
 - [Why Random Forest doesn't work well for Time-Series?](https://medium.com/datadriveninvestor/why-wont-time-series-data-and-random-forests-work-very-well-together-3c9f7b271631) 
 - [Comprehensive guide to Ensemble Models](https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-for-ensemble-models/) 
-- [The Simple Math behind 3 Decision Tree Splitting criterions](https://mlwhiz.com/blog/2019/11/12/dtsplits/) 
+- [The Simple Math behind 3 Decision Tree Splitting criteria](https://mlwhiz.com/blog/2019/11/12/dtsplits/) 
 
 ### D. K-Nearest-Neighbors
 
@@ -114,7 +125,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 
 ### F. Naive Bayes
 
-- [12 tips to make most out of Naive Bayes](https://machinelearningmastery.com/better-naive-bayes/) 
+- [12 tips to make the most out of Naive Bayes](https://machinelearningmastery.com/better-naive-bayes/) 
 - [Naive Bayes - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=vz_xuxYS2PM) 
 - [6 easy steps to learn Naive Bayes](https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/) 
 
