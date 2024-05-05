@@ -129,6 +129,8 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Naive Bayes - Understand Everything (Theory + Maths + Coding) in 1 video](https://www.youtube.com/watch?v=vz_xuxYS2PM) 
 - [6 easy steps to learn Naive Bayes](https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/) 
 
+### G. Feature Selection
+-[Awesome Feature Engineering for Machine Learning: GitHub](https://github.com/aikho/awesome-feature-engineering)
 
 ### 6. CASE STUDIES:
 
