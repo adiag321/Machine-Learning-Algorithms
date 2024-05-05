@@ -1,8 +1,13 @@
 ## <p align="center">RESOURCES TO LEARN MACHINE LEARNING ALGORITHMS </p>
+
+<!-- Anchor tag for top of the page -->
+<a id="top"></a>
+
 In this repository, I have curated all the materials one can use to study SQL, Data Analysis, and Machine learning Algorithms.
 
 ![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
 
+--------------
 ### PLATFORMS TO LEARN DATA SCIENCE:
 - [Great Learning](https://www.greatlearning.in/)
 - [Udemy Online Courses](https://www.udemy.com/home/my-courses/learning/)
@@ -14,7 +19,8 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [Khan Academy](https://www.khanacademy.org/)
 - [FreeCodeCamp Learning](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success#)
 - [UpGrad Learning](https://www.notion.so/UpGrad-Learning-5b6c7b338fd2425e983f7052f5e4279c?pvs=21)
-
+  
+--------------
 ### YOUTUBERS/PLAYLISTS TO FOLLOW:
 - [KRISH NAIK COMPLETE MACHINE LEARNING PLAYLISTS](https://www.youtube.com/playlist?list=PLZoTAELRMXVPBTrWtJkn3wWQxZkmTXGwe)
 - [CampusX](https://www.youtube.com/@campusx-official/playlists)
@@ -23,19 +29,21 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw/videos)
 - [Siddhardhan](https://www.youtube.com/c/Siddhardhan/videos)
 - [The Data Scientist Show by Daliana Liu - DATA PODCAST](https://www.youtube.com/@TheDataScientistShow/videos)
-  
+
+--------------
 ### 1. PROBABILITY AND STATISTICS:
 
 - [Introduction to Probability](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/)
 
-
+[Go to Top](#top)
+--------------
 ### 2. PYTHON:
 
 - [Python for Data Analysis by DataDraft - Youtube Playlist](https://www.youtube.com/playlist?list=PLiC1doDIe9rCYWmH9wIEYEXXaJ4KAi3jc)
 - [Corey Schafer - Youtube Channel](https://www.youtube.com/user/schafer5)
 - [Sentdex - Youtube Channel](https://www.youtube.com/user/sentdex)
 
-
+--------------
 ### 3. SQL:
 
 #### INTERVIEW:
@@ -71,6 +79,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 #### GENERAL RESOURCES:
 - [5 Common SQL Interview Problems for Data Scientists](https://towardsdatascience.com/5-common-sql-interview-problems-for-data-scientists-1bfa02d8bae6)
 
+--------------
 ### 4. MACHINE LEARNING:
 
 #### INTERVIEW:
@@ -80,6 +89,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [DATA SCIENCE FOR BEGINNERS BY CODEBASICS - YOUTUBE PLAYLIST](https://www.youtube.com/playlist?list=PLeo1K3hjS3us_ELKYSj_Fth2tIEkdKXvV)
 - [Unsupervised Machine Learning by Cognitive Class (Project Based)](https://cognitiveclass.ai/learn/unsupervised-machine-learning)
 
+--------------
 ### 5. CLASSICAL MACHINE LEARNING ALGORITHMS
 - [All Learning Algorithms Explained in 14 Minutes](https://www.youtube.com/watch?v=BT6Aw6Q75Yg)
 
@@ -130,10 +140,20 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [6 easy steps to learn Naive Bayes](https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/) 
 
 ### G. Feature Selection
--[Awesome Feature Engineering for Machine Learning: GitHub](https://github.com/aikho/awesome-feature-engineering)
+- [Awesome Feature Engineering for Machine Learning: GitHub](https://github.com/aikho/awesome-feature-engineering)
 
+--------------
 ### 6. CASE STUDIES:
+The best way to approach such a question is to have a framework -
+1. Ask questions to narrow down the problem area
+2. Suggest and use feedback to decide on business metrics relevant to the problem
+3. Decide the best ML formulation (classification/forecasting/recommendation)
+4. Decide on model metrics that can tie to business metrics.
+5. Suggest which models you would experiment with
+6. Explain how you would productionalize.
+6. Explain how you would A/B test the final model
 
+#### RESOURCES: 
 - [Dawn of Taxi Aggregators](https://www.analyticsvidhya.com/blog/2016/04/case-study-analytics-interviews-dawn-taxi-aggregators/) 
 - [Optimizing product prices for an online vendor](https://www.analyticsvidhya.com/blog/2016/07/solving-case-study-optimize-products-price-online-vendor-level-hard/) 
 - [Tips for a Case-Study Interview](https://workera.ai/resources/data-science-case-study-interview/) 
