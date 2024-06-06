@@ -1,7 +1,5 @@
 ## <p align="center">RESOURCES TO LEARN MACHINE LEARNING ALGORITHMS </p>
 In this repository, I have curated all the materials one can use to study SQL, Data Analysis, and Machine learning Algorithms.
-
-![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
 <a id="top"></a>
 
 ### Table of Contents
@@ -186,3 +184,5 @@ The best way to approach such a question is to have a framework -
 - [Data Science Case Study: Optimizing Product Placement in Retail ](https://towardsdatascience.com/data-science-case-study-optimizing-product-placement-in-retail-part-1-2e8b27e16e8d)
 
 #### [Go to Top](#top)
+--------------
+![Machine learning Roadmap](./Assets/Images/Machine%20learning%20RoadMap.png)
