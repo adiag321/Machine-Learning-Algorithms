@@ -45,22 +45,21 @@ In this repository, I have curated all the materials one can use to study SQL, D
 
 - [Python for Data Analysis by DataDraft - Youtube Playlist](https://www.youtube.com/playlist?list=PLiC1doDIe9rCYWmH9wIEYEXXaJ4KAi3jc)
 - [Corey Schafer - Youtube Channel](https://www.youtube.com/user/schafer5)
-- [Sentdex - Youtube Channel](https://www.youtube.com/user/sentdex)
 
 #### [Go to Top](#top)
 --------------
 ### <a id="sql"></a>3. SQL:
 
 #### INTERVIEW:
-- [DataLemur](https://datalemur.com/)
-- [StrataScatch](https://www.stratascratch.com/blog/categories/sql/)
-- [DataFord Io](https://dataford.io/sql)
-- [LeetCode](https://leetcode.com/problemset/database/)
-- [Hackerrank](https://www.hackerrank.com/domains/sql)
-- [Analyst Builder](https://www.analystbuilder.com/questions)
+- [DataLemur Questions](https://datalemur.com/)
+- [StrataScatch Questions](https://www.stratascratch.com/blog/categories/sql/)
+- [Interview Query Questions](https://www.interviewquery.com/questions?searchQuery=&searchQuestionTag=&searchCompany=&ordering=Recommended&orderingDirection=ASC&pageSize=20&page=0)
+- [DataFord Io Questions](https://dataford.io/sql)
+- [LeetCode Questions](https://leetcode.com/problemset/database/)
+- [Hackerrank Questions](https://www.hackerrank.com/domains/sql)
+- [Analyst Builder Questions](https://www.analystbuilder.com/questions)
 - [SQL Interview Prep - GitHub](https://github.com/Aafreen29/SQL-Interview-Prep-Question)
 - [Clever Programming SQL Interview Questions](https://thecleverprogrammer.com/2023/07/19/sql-interview-questions-for-data-science/)
-- [SQL Interview Query Questions](https://www.interviewquery.com/questions?searchQuery=&searchQuestionTag=&searchCompany=&ordering=Recommended&orderingDirection=ASC&pageSize=20&page=0)
 - [David Langer’s YouTube Channel](https://www.youtube.com/channel/UCRhUp6SYaJ7zme4Bjwt28DQ)
 - [Ken Jee’s Simple SQL Fundamentals](https://www.youtube.com/watch?v=WKXtTo7lqmA)
 - [Tina Huang’s SQL Series](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA)
