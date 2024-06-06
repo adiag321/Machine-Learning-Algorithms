@@ -3,28 +3,15 @@ In this repository, I have curated all the materials one can use to study SQL, D
 <a id="top"></a>
 
 ### Table of Contents
-1. [Platforms to Learn Data Science](#platforms)
-2. [YouTubers/Playlists to Follow](#youtubers)
-3. [Probability and Statistics](#statistics)
-4. [Python](#python)
-5. [SQL](#sql)
-6. [Machine Learning](#machine-learning)
-7. [Classical Machine Learning Algorithms](#classical-ml)
-8. [Case Studies](#case-studies)
+1. [YouTubers/Playlists to Follow](#youtubers)
+2. [Probability and Statistics](#statistics)
+3. [Python](#python)
+4. [SQL](#sql)
+5. [Machine Learning](#machine-learning)
+6. [Classical Machine Learning Algorithms](#classical-ml)
+7. [Case Studies](#case-studies)
 
 --------------
-### <a id="platforms"></a>PLATFORMS TO LEARN DATA SCIENCE:
-- [Great Learning](https://www.greatlearning.in/)
-- [Udemy Online Courses](https://www.udemy.com/home/my-courses/learning/)
-- [EDX](https://courses.edx.org/dashboard#)
-- [Coursera](https://www.coursera.org/)
-- [Udacity Learning Platform](https://classroom.udacity.com/me)
-- [Kaggle](https://www.kaggle.com/learn)
-- [Analytics Vidhya Website](https://courses.analyticsvidhya.com/enrollments)
-- [Khan Academy](https://www.khanacademy.org/)
-- [FreeCodeCamp Learning](https://www.freecodecamp.org/learn/?messages=success%5B0%5D%3Dflash.signin-success#)
-- [UpGrad Learning](https://www.notion.so/UpGrad-Learning-5b6c7b338fd2425e983f7052f5e4279c?pvs=21)
-
 ### <a id="youtubers"></a>YOUTUBERS/PLAYLISTS TO FOLLOW:
 - [KRISH NAIK COMPLETE MACHINE LEARNING PLAYLISTS](https://www.youtube.com/playlist?list=PLZoTAELRMXVPBTrWtJkn3wWQxZkmTXGwe)
 - [CampusX](https://www.youtube.com/@campusx-official/playlists)
