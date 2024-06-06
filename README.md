@@ -50,7 +50,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 --------------
 ### <a id="sql"></a>3. SQL:
 
-#### INTERVIEW:
+#### PRACTICE:
 - [DataLemur Questions](https://datalemur.com/)
 - [StrataScatch Questions](https://www.stratascratch.com/blog/categories/sql/)
 - [Interview Query Questions](https://www.interviewquery.com/questions?searchQuery=&searchQuestionTag=&searchCompany=&ordering=Recommended&orderingDirection=ASC&pageSize=20&page=0)
@@ -58,11 +58,14 @@ In this repository, I have curated all the materials one can use to study SQL, D
 - [LeetCode Questions](https://leetcode.com/problemset/database/)
 - [Hackerrank Questions](https://www.hackerrank.com/domains/sql)
 - [Analyst Builder Questions](https://www.analystbuilder.com/questions)
+- [Data with Danny: 8 Week SQL Challenge](https://8weeksqlchallenge.com/)
+
+#### INTERVIEW QUESTIONS:
+- [StrataScratch: Interview Questions - Youtube](https://www.youtube.com/playlist?list=PLv6MQO1Zzdmq5w4YkdkWyW8AaWatSQ0kX)
+- [Tina Huang’s SQL Sunday Series: Interview](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA)
 - [SQL Interview Prep - GitHub](https://github.com/Aafreen29/SQL-Interview-Prep-Question)
 - [Clever Programming SQL Interview Questions](https://thecleverprogrammer.com/2023/07/19/sql-interview-questions-for-data-science/)
-- [David Langer’s YouTube Channel](https://www.youtube.com/channel/UCRhUp6SYaJ7zme4Bjwt28DQ)
 - [Ken Jee’s Simple SQL Fundamentals](https://www.youtube.com/watch?v=WKXtTo7lqmA)
-- [Tina Huang’s SQL Series](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA)
 - [Alex The Analyst’s YouTube SQL Playlists](https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/featured)
 - [Data Science Jay’s SQL Mock Interview](https://www.youtube.com/watch?v=LcVz8wSM-AM)
 - [Edureka Top 65 SQL Interview Questions and Answers](https://www.youtube.com/watch?v=-WEpWH1NHGU)
@@ -70,11 +73,8 @@ In this repository, I have curated all the materials one can use to study SQL, D
 
 #### LEARNING:
 - [GeeksForGeeks: 30 Days of SQL Basic to Advance](https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/)
-- [StrataScratch - Youtube](https://www.youtube.com/playlist?list=PLv6MQO1Zzdmq5w4YkdkWyW8AaWatSQ0kX)
 - [Crack Concepts SQL - Youtube Channel](https://www.youtube.com/@crackconcepts)
 - [Ankit Bansal - SQL - Youtube Channel](https://www.youtube.com/@ankitbansal6)
-- [Tina Huang’s SQL Series - Youtube Channel](https://www.youtube.com/playlist?list=PLVD3APpfd1tuXrXBWAntLx4tNaONro5dA)
-- [Data with Danny: 8 Week SQL Challenge](https://8weeksqlchallenge.com/)
 - [MySQL Playlist by Krish Naik - Youtube Channel](https://www.youtube.com/playlist?list=PLZoTAELRMXVNMRWlVf0bDDSxNEn38u9Cl)
 - [Intro to SQL by Mode Analytics](https://mode.com/sql-tutorial/introduction-to-sql/)
 - [SQLZoo: SQL Tutorial](https://sqlzoo.net/wiki/SQL_Tutorial)
