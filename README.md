@@ -30,6 +30,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 ### <a id="youtubers"></a>YOUTUBERS/PLAYLISTS TO FOLLOW:
 - [KRISH NAIK COMPLETE MACHINE LEARNING PLAYLISTS](https://www.youtube.com/playlist?list=PLZoTAELRMXVPBTrWtJkn3wWQxZkmTXGwe)
 - [CampusX](https://www.youtube.com/@campusx-official/playlists)
+- [Data Monk Channel - Machine Learning ](https://www.youtube.com/@thedatamonk7779/videos)
 - [Data Professor](https://www.youtube.com/dataprofessor?sub_confirmation=1)
 - [StatQuest with Josh Starmer](https://www.youtube.com/user/joshstarmer)
 - [Cory Schafer](https://www.youtube.com/user/schafer5)
@@ -51,6 +52,7 @@ In this repository, I have curated all the materials one can use to study SQL, D
 ### <a id="statistics"></a>1. PROBABILITY AND STATISTICS:
 
 - [Introduction to Probability](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/)
+- [Statistics A/B testing Interview Questions](https://www.interviewquery.com/p/statistics-ab-testing-interview-questions)
 
 #### [Go to Top](#top)
 --------------
