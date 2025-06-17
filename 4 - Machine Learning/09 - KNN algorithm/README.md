@@ -2,15 +2,11 @@
 
 K-Nearest Neighbors (KNN) is a **supervised learning algorithm** used for **classification and regression** tasks. It is a **non-parametric**, **instance-based** (lazy learning) method that makes predictions based on similarity (distance) between data points.
 
----
-
 ## Key Concepts
 
 - **Instance-based learning**: KNN memorizes the training dataset instead of learning a discriminative function.
 - **No training phase**: KNN directly makes predictions using the entire training dataset.
 - **Distance-based**: Uses distance metrics like Euclidean, Manhattan, or Minkowski to find the "nearest" neighbors.
-
----
 
 ## How KNN Works
 
@@ -21,8 +17,6 @@ K-Nearest Neighbors (KNN) is a **supervised learning algorithm** used for **clas
    - Predict the **most common class** among neighbors.
 5. For regression:
    - Predict the **average value** of neighbors.
-
----
 
 ## Distance Metrics
 
@@ -38,8 +32,6 @@ K-Nearest Neighbors (KNN) is a **supervised learning algorithm** used for **clas
 
 - **Minkowski Distance** (generalized form)
 
----
-
 ## Hyperparameters
 
 | Parameter        | Description                                                   |
@@ -48,16 +40,12 @@ K-Nearest Neighbors (KNN) is a **supervised learning algorithm** used for **clas
 | `metric`         | Distance metric to use (`'euclidean'`, `'manhattan'`, etc.)  |
 | `weights`        | `'uniform'` (equal weight) or `'distance'` (weighted by dist) |
 
----
-
 ## Pros
 
 - Simple to understand and implement
 - No training time
 - Works well with small datasets
 - Naturally handles multi-class classification
-
----
 
 ## Cons
 
@@ -66,15 +54,11 @@ K-Nearest Neighbors (KNN) is a **supervised learning algorithm** used for **clas
 - Poor with imbalanced data
 - Requires proper feature scaling (standardization or normalization)
 
----
-
 ## Preprocessing Tips
 
 - Normalize or standardize features to ensure fair distance calculations.
 - Remove noise and irrelevant features to improve accuracy.
 - Choose optimal `K` using methods like cross-validation.
-
----
 
 ## KNN with Scikit-learn
 
