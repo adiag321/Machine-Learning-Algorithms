@@ -1,4 +1,4 @@
-# Naive Bayes Classifier - Iris Dataset
+# Naive Bayes Classifier
 
 ## What is Naive Bayes?
 
