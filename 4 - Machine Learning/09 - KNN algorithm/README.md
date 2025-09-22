@@ -2,6 +2,16 @@
 
 K-Nearest Neighbors (KNN) is a **supervised learning algorithm** used for **classification and regression** tasks. It is a **non-parametric**, **instance-based** (lazy learning) method that makes predictions based on similarity (distance) between data points.
 
+#### Notes: 
+* "Always scale your features before applying KNN, as it’s a distance-based algorithm."
+* "Fit the scaler only on the training data to avoid data leakage."
+* "Split the data first, then apply standardization separately to train and test sets."
+* "Use the Elbow Method to find the optimal value of K for your dataset."
+* "KNN is a lazy learner — it stores training data and computes distances at prediction time."
+* "Avoid using KNN on high-dimensional data unless you've applied dimensionality reduction."
+* "KNN can perform poorly on imbalanced datasets — consider resampling techniques."
+* "Test different distance metrics (e.g., Euclidean vs Manhattan) to see what works best."
+
 ## Key Concepts
 
 - **Instance-based learning**: KNN memorizes the training dataset instead of learning a discriminative function.

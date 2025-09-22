@@ -14,7 +14,6 @@ from sklearn.metrics import r2_score, mean_squared_error
 import warnings
 warnings.filterwarnings("ignore")
 
-
 os.chdir(r'D:\OneDrive - Northeastern University\Jupyter Notebook\Machine Learning Algorithms\4 - Machine Learning\08 - Feature Importance')
 
 data = load_diabetes()
@@ -26,7 +25,7 @@ df['target'] = data['target']
 ###################################
 X = df.drop(columns=['target'])
 y = df['target']
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 ###################################
 # Random Forest 
@@ -46,8 +45,8 @@ print(f"RMSE: {rmse:.2f}")
 # Feature Importance
 ###################################
 importances = model.feature_importances_
-importance_df = pd.DataFrame({'Feature': X.columns, 'Importance': importances})
-importance_df = importance_df.sort_values(by='Importance', ascending=False)
+importance_df = pd.DataFrame({'Feature': X.columns, 
+                             'Importance': importances}).sort_values(by='Importance', ascending=False)
 
 # Plot feature importance
 plt.figure(figsize=(10, 5))
@@ -62,8 +61,8 @@ plt.show()
 # Permutation importance
 ###################################
 perm_result = permutation_importance(model, X_test, y_test, n_repeats=10, random_state=42)
-perm_df = pd.DataFrame({'Feature': X.columns, 'Permutation Importance': perm_result.importances_mean})
-perm_df = perm_df.sort_values(by='Permutation Importance', ascending=False)
+perm_df = pd.DataFrame({'Feature': X.columns, 
+        'Permutation Importance': perm_result.importances_mean}).sort_values(by='Permutation Importance', ascending=False)
 
 # Plot permutation importance
 plt.figure(figsize=(10, 5))
