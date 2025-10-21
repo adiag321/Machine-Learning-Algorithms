@@ -168,10 +168,10 @@ df['sex'] = df['sex'].astype(str)
 def woe_encoding(data, col_name, target_name):
     # pip install feature-engine
     data[col_name] = data[col_name].astype(str)
-    
+    # Calling the function
     woe_encoder = WoEEncoder(variables=[col_name], ignore_format=True, fill_value=0)
     woe_encoder.fit(data[[col_name]], data[target_name])
-    
+    # Mapping WOE
     print("WOE mapping:", woe_encoder.encoder_dict_)
     data_woe = woe_encoder.transform(data[[col_name]])
     # Concat with the original data
@@ -179,3 +179,15 @@ def woe_encoding(data, col_name, target_name):
     return data
 
 woe_encoding_df = woe_encoding(data=df, col_name='sex', target_name='smoker_binary')
+
+
+def woe_encoding_scratch(data, col_name, target_name):
+    prob = pd.DataFrame(data.groupby([col_name])[target_name].mean())
+    prob["bad"] = 1 - prob[target_name]
+    mapper = (np.log(prob[target_name]/prob["bad"])).to_dict()
+    print("WOE mapping:", mapper)
+    data[col_name] = data[col_name].map(mapper)
+    return data
+
+woe_encoding_scratch_df = woe_encoding_scratch(data=df, col_name='sex', 
+                                               target_name='smoker_binary')
