@@ -3,3 +3,4 @@
 *.pyc
 extras/
 .code-workspace
+.vscode
