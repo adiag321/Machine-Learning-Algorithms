@@ -1,5 +1,9 @@
-# -*- coding: utf-8 -*-
-## Handling Missing Values
+#####################################################
+## Handling Missing Values: Advanced Techniques
+# 1. 3M Imputation (Mean, Median, Mode)
+# 2. Missing Case Analysis (missing at random)
+# 3. Random Sample Imputation: Imputing at Random
+#####################################################
 
 import numpy as np 
 import pandas as pd
@@ -19,16 +23,17 @@ data = pd.read_csv("https://raw.githubusercontent.com/adiag321/Data-Science-data
 ############################################################
 ##      3M Imputation (Mean, Median, Mode)
 ############################################################
-
 continous_var_na = []  
 def continous_var_null(data, cont_var_null):
+    '''
+    Find all numerical predictor variables with null values
+    '''
     for label, content in data.items():
         if pd.api.types.is_numeric_dtype(content) and data[label].isnull().sum() > 0:
             cont_var_null.append(label)
     ## Show data distribution
     print("The data distribution for Continous variables with Null values:")
     print(data[cont_var_null].describe())
-    
     #creating plots for continous variables
     data[cont_var_null].hist(bins=50, figsize=(10,5))
     
@@ -37,7 +42,7 @@ def continous_var_null(data, cont_var_null):
 # Mean, Median and mode imputation
 def impute_missing_vals(data, var, strategy):
     """
-    This function takes in data, variable and strategy and fill the missing value accordingly.
+    Fill the missing value using Mean/Median/Mode.
     It also plots the distribution of the original and imputed data
     """
     if strategy == "mode":
@@ -63,27 +68,29 @@ def impute_missing_vals(data, var, strategy):
     return data
 
 continous_var_na = continous_var_null(data, continous_var_na)
-
 mean_imp_data = impute_missing_vals(data, "GarageYrBlt", "mean")
 
 ############################################################
 ##      Missing Case Analysis (missing at random)
 ############################################################
-
 # storing variables those variables which has missing values 
 var_na = []
 def missing_data(data, missing_var_list):
+    '''
+    Find all the columns with missing values (Numeric + Categorical)
+    '''
     for var in data.columns:
         if data[var].isnull().sum() > 0:
             missing_var_list.append(var)
-
-    #printing % of missing values in the columns 
+    # printing % of missing values in the columns 
     print(data[missing_var_list].isnull().sum()*100/len(data))
-    
     # data[var_na].isnull().sum()*100/data.shape[1]
     
 def missing_at_random_imputer(data, threshold, var):
-    
+    '''
+    We simply drop the columns if the missing value is less than threshold.
+    And check if the distribution didnt change
+    '''
     # Storing those variables which have missing values less than 5 %
     var_cca = [var for var in data.columns if data[var].isnull().mean() < threshold]
 
@@ -135,24 +142,23 @@ def missing_at_random_imputer(data, threshold, var):
             graph.text(p.get_x()+p.get_width()/2., height + 0.2,height, ha="center",fontsize=15)          
     else:
         print("Predictor is not of INTEGER or OBJECT data dtype")
-        
     return data
-
 
 imputed_data = missing_at_random_imputer(data, 0.05, "GrLivArea")
 
-
 ############################################################
-##      Random Sampling
+##      Random Sample Imputation: Imputing at Random
 ############################################################
-
-def random_sample_imputation(df, variable):
-    random_sample = df[variable].dropna().sample(df[variable].isnull().sum(), random_state=0)
-    random_sample.index = df[df[variable].isnull()].index
-    df.loc[df[variable].isnull(), variable] = random_sample
+def random_sample_imputation(df, col):
+    '''
+    Fill the missing values at random
+    '''
+    random_sample = df[col].dropna().sample(df[col].isnull().sum(), random_state=0)
+    random_sample.index = df[df[col].isnull()].index
+    df.loc[df[col].isnull(), col] = random_sample
     return df
 
-df = random_sample_imputation(data, 'GrLivArea')
+random_imputed_df = random_sample_imputation(df = data, col = 'GrLivArea')
 
 
 
