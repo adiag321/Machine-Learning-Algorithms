@@ -8,5 +8,6 @@
             "envManager": "ms-python.python:system",
             "packageManager": "ms-python.python:pip"
         }
-    ]
+    ],
+    "cursorpyright.analysis.typeCheckingMode": "basic"
 }
