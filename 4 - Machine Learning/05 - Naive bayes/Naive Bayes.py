@@ -31,32 +31,60 @@ def gbnaivebayes(X_train, y_train, X_test, y_test):
     print("Model parameters:", gnb.get_params())
     print("Accuracy (in %):", accuracy_score(y_test, y_pred) * 100)
 
+    # Prior Probabilities & Feature Stats
+    print("\nClass Labels:", gnb.classes_)
+    print("Class Priors (P(class)):", gnb.class_prior_)
+    print("\nFeature Means (per class):\n", pd.DataFrame(gnb.theta_, columns=X.columns, index=data.target_names))
+    print("\nFeature Variances (per class):\n", pd.DataFrame(gnb.var_, columns=X.columns, index=data.target_names))
+    
+    # Log Probabilities
+    log_probs = gnb.predict_log_proba(X_test)
+    print("\nLog probabilities of first 5 test samples:\n", log_probs[:5])
+
+    # Posterior Probabilities
+    probs = gnb.predict_proba(X_test)
+    print("\nPosterior probabilities of first 5 test samples:\n", probs[:5])
+    
+    # Class Probabilities
+    class_probabilities = gnb.predict_proba(X_test)
+    print("\nClass probabilities of first 5 test samples:\n", class_probabilities[:5])
+    
+    ##############################
+    # Confusion Matrix & Report
+    ##############################
+    cm = confusion_matrix(y_test, y_pred)
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=data.target_names, yticklabels=data.target_names)
+    plt.title("Confusion Matrix")
+    plt.xlabel("Predicted")
+    plt.ylabel("Actual")
+    plt.show()
+
+    print("\nClassification Report:\n", classification_report(y_test, y_pred, target_names=data.target_names))
+    print("Gaussian Naive Bayes model accuracy (in %):", accuracy_score(y_test, y_pred) * 100)
+
+    ##############################
+    # ROC Curve
+    ##############################
+    #y_score = gnb.decision_function(X_test)
+    y_score = gnb.predict_proba(X_test)[:, 1]
+    fpr, tpr, _ = roc_curve(y_test, y_score, pos_label=2)
+    roc_auc = auc(fpr, tpr)
+
+    plt.figure(figsize=(8, 6))
+    plt.plot(fpr, tpr, color='darkorange', lw=2, label='ROC curve (area = %0.2f)' % roc_auc)
+    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver Operating Characteristic')
+    plt.legend(loc="lower right")
+    plt.show()
+
     return gnb, y_pred
 
 # Train model
 gnb, y_pred = gbnaivebayes(X_train, y_train, X_test, y_test)
-
-# Prior Probabilities & Feature Stats
-print("\nClass Labels:", gnb.classes_)
-print("Class Priors (P(class)):", gnb.class_prior_)
-print("\nFeature Means (per class):\n", pd.DataFrame(gnb.theta_, columns=X.columns, index=data.target_names))
-
-# Log Probabilities
-log_probs = gnb.predict_log_proba(X_test)
-print("\nLog probabilities of first 5 test samples:\n", log_probs[:5])
-
-##############################
-# Confusion Matrix & Report
-##############################
-cm = confusion_matrix(y_test, y_pred)
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=data.target_names, yticklabels=data.target_names)
-plt.title("Confusion Matrix")
-plt.xlabel("Predicted")
-plt.ylabel("Actual")
-plt.show()
-
-print("\nClassification Report:\n", classification_report(y_test, y_pred, target_names=data.target_names))
-print("Gaussian Naive Bayes model accuracy (in %):", accuracy_score(y_test, y_pred) * 100)
 
 ##############################
 # Cross-Validation
