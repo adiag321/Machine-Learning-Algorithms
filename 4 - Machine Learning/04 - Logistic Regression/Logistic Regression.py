@@ -8,6 +8,8 @@ import joblib
 import os
 import warnings
 warnings.filterwarnings("ignore")
+pd.set_option('display.max_columns', None)
+
 
 os.chdir('D:\\OneDrive - Northeastern University\\Jupyter Notebook\\Machine Learning Algorithms')
 
@@ -51,20 +53,51 @@ def evaluate_model(model, X, y, dataset_name=""):
     preds = model.predict(X)
     probs = model.predict_proba(X)[:, 1]
     
+    # Calculate basic metrics
     acc = accuracy_score(y, preds)
     auc = roc_auc_score(y, probs)
     
-    print(f"\n{dataset_name} Accuracy: {(acc)*100:.4f}%")
-    print(f"{dataset_name} ROC AUC: {auc:.4f}")
-    print(f"{dataset_name} Classification Report:\n", classification_report(y, preds))
+    # Calculate confusion matrix and derived metrics
+    cf = confusion_matrix(y, preds)
+    tn, fp, fn, tp = cf.ravel()
     
-    # Confusion matrix
-    cf = confusion_matrix(y, preds, normalize='true')
-    plt.figure(figsize=(5, 4))
-    sns.heatmap(cf, annot=True, fmt=".2f", cmap="Blues")
-    plt.title(f"{dataset_name} Confusion Matrix")
-    plt.xlabel("Predicted")
-    plt.ylabel("Actual")
+    # Calculate sensitivity (recall) and specificity
+    sensitivity = tp / (tp + fn)
+    specificity = tn / (tn + fp)
+    precision = tp / (tp + fp)
+    f1 = 2 * (precision * sensitivity) / (precision + sensitivity)
+    
+    # Print comprehensive metrics
+    print(f"\n{dataset_name} Metrics:")
+    print(f"Accuracy: {acc*100:.2f}%")
+    print(f"ROC AUC: {auc:.4f}")
+    print(f"Sensitivity (Recall): {sensitivity:.4f}")
+    print(f"Specificity: {specificity:.4f}")
+    print(f"Precision: {precision:.4f}")
+    print(f"F1 Score: {f1:.4f}")
+    print(f"\n{dataset_name} Classification Report:\n", classification_report(y, preds))
+    
+    # Create figure with subplots for both confusion matrix and ROC curve
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+    
+    # Plot normalized confusion matrix
+    cf_normalized = confusion_matrix(y, preds, normalize='true')
+    sns.heatmap(cf_normalized, annot=True, fmt=".2f", cmap="Blues", ax=ax1)
+    ax1.set_title(f"{dataset_name} Confusion Matrix (Normalized)")
+    ax1.set_xlabel("Predicted")
+    ax1.set_ylabel("Actual")
+    
+    # Plot ROC curve
+    fpr, tpr, _ = roc_curve(y, probs)
+    ax2.plot(fpr, tpr, label=f'ROC curve (AUC = {auc:.2f})')
+    ax2.plot([0, 1], [0, 1], 'k--', label='Random')
+    ax2.set_xlabel('False Positive Rate')
+    ax2.set_ylabel('True Positive Rate')
+    ax2.set_title(f'{dataset_name} ROC Curve')
+    ax2.legend()
+    ax2.grid(True)
+    
+    plt.tight_layout()
     plt.show()
     
     return preds, probs
