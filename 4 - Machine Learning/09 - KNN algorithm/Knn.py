@@ -14,10 +14,6 @@ warnings.filterwarnings('ignore')
 
 os.chdir(r'D:\OneDrive - Northeastern University\Jupyter Notebook\Machine Learning Algorithms\Datasets')
 
-# Clear any existing handlers (important in Jupyter or re-runs)
-for handler in logging.root.handlers[:]:
-    logging.root.removeHandler(handler)
-    
 # Set up logging to both file and console
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
