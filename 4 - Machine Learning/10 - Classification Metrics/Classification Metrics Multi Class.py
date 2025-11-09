@@ -29,18 +29,12 @@ X = df.drop(columns=['Species'])
 y = df['Species']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 
-################################
-# Initialize models
-################################
 clf1 = LogisticRegression(max_iter=1000)
 clf2 = DecisionTreeClassifier()
-
 clf1.fit(X_train, y_train)
 clf2.fit(X_train, y_train)
-
 y_pred1 = clf1.predict(X_test)
 y_pred2 = clf2.predict(X_test)
-
 y_proba1 = clf1.predict_proba(X_test)
 y_proba2 = clf2.predict_proba(X_test)
 
