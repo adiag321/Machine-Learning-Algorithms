@@ -33,10 +33,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 ################################
 log_reg = LogisticRegression(max_iter=1000)
 dec_tree = DecisionTreeClassifier()
-
 log_reg.fit(X_train, y_train)
 dec_tree.fit(X_train, y_train)
-
 log_reg_y_pred = log_reg.predict(X_test)
 dec_tree_y_pred = dec_tree.predict(X_test)
 
