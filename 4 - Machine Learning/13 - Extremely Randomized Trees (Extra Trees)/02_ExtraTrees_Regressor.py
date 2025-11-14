@@ -83,10 +83,6 @@ def train_extra_trees_regressor(X_train, X_test, y_train, y_test,
                               max_depth=None,
                               n_jobs=-1):
     """
-    Train and evaluate Extra Trees Regressor with comprehensive metrics.
-    
-    Parameters:
-    -----------
     n_estimators : int
         Number of trees in the forest
     criterion : {'squared_error', 'absolute_error', 'friedman_mse', 'poisson'}
@@ -233,49 +229,40 @@ def perform_grid_search(X, y, cv=5):
     
     return grid_search
 
-# Example usage
-if __name__ == "__main__":
-    data = fetch_california_housing()
-    X = pd.DataFrame(data.data, columns=data.feature_names)
-    y = data.target
-    
-    # Check data requirements
-    check_data_requirements(X, y)
-    
-    # Split the data
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    # Scale features
-    scaler = StandardScaler()
-    X_train_scaled = pd.DataFrame(
-        scaler.fit_transform(X_train),
-        columns=X_train.columns
-    )
-    X_test_scaled = pd.DataFrame(
-        scaler.transform(X_test),
-        columns=X_test.columns
-    )
-    
-    # Train and evaluate regressor
-    print("\nTraining Extra Trees Regressor...")
-    etr_model, feature_imp, top_errors = train_extra_trees_regressor(
-        X_train_scaled, X_test_scaled, y_train, y_test
-    )
-    
-    # Perform grid search
-    print("\nPerforming Grid Search...")
-    grid_search = perform_grid_search(X_train_scaled, y_train)
-    
-    # Train with best parameters
-    print("\nTraining with best parameters...")
-    best_etr, best_feature_imp, best_errors = train_extra_trees_regressor(
-        X_train_scaled, X_test_scaled, y_train, y_test,
-        **grid_search.best_params_
-    )
-    
-    # Print samples with highest prediction errors
-    print("\nTop 10 Samples with Highest Prediction Errors:")
-    print(best_errors)
-    
-    # Save the model if needed
-    # joblib.dump(best_etr, 'extra_trees_regressor_model.pkl')
+###################################
+# Example
+###################################
+data = fetch_california_housing()
+X = pd.DataFrame(data.data, columns=data.feature_names)
+y = data.target
+
+# Check data requirements
+check_data_requirements(X, y)
+
+# Split the data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Scale features
+scaler = StandardScaler()
+X_train_scaled = pd.DataFrame(scaler.fit_transform(X_train),columns=X_train.columns)
+X_test_scaled = pd.DataFrame(scaler.transform(X_test), columns=X_test.columns)
+
+# Train and evaluate regressor
+print("\nTraining Extra Trees Regressor...")
+etr_model, feature_imp, top_errors = train_extra_trees_regressor(X_train_scaled, X_test_scaled, y_train, y_test)
+
+# Perform grid search
+print("\nPerforming Grid Search...")
+grid_search = perform_grid_search(X_train_scaled, y_train)
+
+# Train with best parameters
+print("\nTraining with best parameters...")
+best_etr, best_feature_imp, best_errors = train_extra_trees_regressor(X_train_scaled, X_test_scaled, y_train, y_test,
+                                                                      **grid_search.best_params_)
+
+# Print samples with highest prediction errors
+print("\nTop 10 Samples with Highest Prediction Errors:")
+print(best_errors)
+
+# Save the model if needed
+# joblib.dump(best_etr, 'extra_trees_regressor_model.pkl')
