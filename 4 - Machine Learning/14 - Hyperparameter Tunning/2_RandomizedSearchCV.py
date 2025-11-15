@@ -1,14 +1,11 @@
-# -*- coding: utf-8 -*-
 """
 Created on Wed Jul 16 11:39:10 2025
-
 @author: adiag
 """
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
-
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
@@ -30,7 +27,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
-
 # Base model for tuning
 base_svc = SVC()
 
@@ -66,6 +62,7 @@ print("Best parameters from Random Search:", best_params)
 
 ###############################
 # Train best model and evaluate
+###############################
 best_model = random_search.best_estimator_
 y_pred = best_model.predict(X_test)
 
