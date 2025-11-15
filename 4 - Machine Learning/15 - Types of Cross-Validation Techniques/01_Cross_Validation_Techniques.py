@@ -1,26 +1,14 @@
 """
-Cross-validation technique utilities
-
+## Cross-validation technique utilities
 This module provides reusable functions for many cross-validation strategies commonly used in real-world data science workflows.
 Each CV technique is implemented as a separate function that accepts an estimator, feature matrix X
 and target y (and other technique-specific arguments). The functions focus on the cross-validation wiring (splitting, scoring, params)
 rather than modeling.
-
-Usage pattern (example):
-
-from sklearn.linear_model import LogisticRegression
-from cross_validation_utils import stratified_kfold_cv, get_classification_data
-
-X, y = get_classification_data()
-clf = LogisticRegression(max_iter=1000)
-scores = stratified_kfold_cv(clf, X, y, n_splits=5, scoring='accuracy')
-
 All functions return dicts with arrays of scores so you can integrate them into pipelines, model selection, or reporting.
 """
 
 import numpy as np
 import pandas as pd
-
 from sklearn.datasets import load_breast_cancer, load_diabetes
 from sklearn.model_selection import (
     KFold,
@@ -40,7 +28,6 @@ from sklearn.model_selection import (
     RandomizedSearchCV,
 )
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
-
 
 #################################################################################
 ## Data helpers
@@ -208,36 +195,35 @@ def nested_cv_random_search(estimator, param_distributions, X, y, inner_cv, oute
 ## End of Cross-validation functions
 #################################################################################
 
-if __name__ == '__main__':
-    # Classification example
-    Xc, yc = get_classification_data()
-    clf = RandomForestClassifier(n_estimators=50, random_state=42)
-    
-    # 1) Standard K-Fold
-	kf_scores = kfold_cv(clf, Xc, yc, n_splits=5, shuffle=True, random_state=42, scoring='accuracy')
-	print('K-Fold (accuracy) scores:', kf_scores)
-	print('K-Fold mean accuracy:', np.mean(kf_scores["test_score"]))
-    
-    # 2) Stratified K-Fold (preserves class balance)
-	skf_scores = stratified_kfold_cv(clf, Xc, yc, n_splits=5, shuffle=True, random_state=42, scoring='accuracy')
-	print('Stratified K-Fold (accuracy) scores:', skf_scores)
-	print('Stratified K-Fold mean accuracy:', np.mean(skf_scores["test_score"]))
+# Classification example
+Xc, yc = get_classification_data()
+clf = RandomForestClassifier(n_estimators=50, random_state=42)
 
-    # 3) GroupKFold: create simple synthetic groups (e.g., by index modulo n_groups)
-	n_groups = 5
-	groups = (np.arange(len(yc)) % n_groups).tolist()
-	gkf_scores = group_kfold_cv(clf, Xc, yc, groups=groups, n_splits=n_groups, scoring='accuracy')
-	print('GroupKFold (accuracy) scores:', gkf_scores)
-	print('GroupKFold mean accuracy:', np.mean(gkf_scores["test_score"]))
+# 1) Standard K-Fold
+kf_scores = kfold_cv(clf, Xc, yc, n_splits=5, shuffle=True, random_state=42, scoring='accuracy')
+print('K-Fold (accuracy) scores:', kf_scores)
+print('K-Fold mean accuracy:', np.mean(kf_scores["test_score"]))
 
-	# 4) Leave-One-Out (be aware: this will fit N models; can be slow)
-	loo_scores = leave_one_out_cv(clf, Xc, yc, scoring='accuracy')
-	print('Leave-One-Out (accuracy) scores (first 10 shown):', loo_scores[:10])
-	print('Leave-One-Out mean accuracy:', np.mean(loo_scores["test_score"]))
-    
-    # Regression example
-    Xr, yr = get_regression_data()
-    reg = RandomForestRegressor(n_estimators=50, random_state=42)
-    rkf_scores = regression_kfold_cv(reg, Xr, yr, n_splits=5, scoring="r2")
-    print("Regression K-Fold mean R2:", np.mean(rkf_scores["test_score"]))
+# 2) Stratified K-Fold (preserves class balance)
+skf_scores = stratified_kfold_cv(clf, Xc, yc, n_splits=5, shuffle=True, random_state=42, scoring='accuracy')
+print('Stratified K-Fold (accuracy) scores:', skf_scores)
+print('Stratified K-Fold mean accuracy:', np.mean(skf_scores["test_score"]))
+
+# 3) GroupKFold: create simple synthetic groups (e.g., by index modulo n_groups)
+n_groups = 5
+groups = (np.arange(len(yc)) % n_groups).tolist()
+gkf_scores = group_kfold_cv(clf, Xc, yc, groups=groups, n_splits=n_groups, scoring='accuracy')
+print('GroupKFold (accuracy) scores:', gkf_scores)
+print('GroupKFold mean accuracy:', np.mean(gkf_scores["test_score"]))
+
+# 4) Leave-One-Out (be aware: this will fit N models; can be slow)
+loo_scores = leave_one_out_cv(clf, Xc, yc, scoring='accuracy')
+print('Leave-One-Out (accuracy) scores (first 10 shown):', loo_scores[:10])
+print('Leave-One-Out mean accuracy:', np.mean(loo_scores["test_score"]))
+
+# Regression example
+Xr, yr = get_regression_data()
+reg = RandomForestRegressor(n_estimators=50, random_state=42)
+rkf_scores = regression_kfold_cv(reg, Xr, yr, n_splits=5, scoring="r2")
+print("Regression K-Fold mean R2:", np.mean(rkf_scores["test_score"]))
 
