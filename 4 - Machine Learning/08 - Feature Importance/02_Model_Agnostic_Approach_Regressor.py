@@ -127,7 +127,7 @@ def generate_shap_report(X, sample_size, cur_dir):
 
     shap_vals_df = pd.DataFrame(shap_values, columns=X_shap.columns, index=X_shap.index)
     csv_path = os.path.join(outdir, 'shap_values_sample.csv')
-    shap_vals_df.to_csv(csv_path)
+    shap_vals_df.to_csv(csv_path, index = False)
     saved.append(csv_path)
 
     return saved
@@ -143,5 +143,11 @@ from lime.lime_tabular import LimeTabularExplainer
 from sklearn.ensemble import RandomForestRegressor
 
 explainer = LimeTabularExplainer(X_train.values, feature_names=X_train.columns, class_names=['target'], random_state=42)
+model = RandomForestRegressor(n_estimators = 200, max_features = 'sqrt', random_state = 42, n_jobs = -1)
+start = time.time()
+model.fit(X_train, y_train)
+elapsed = time.time() - start
+print(f"Model trained in {elapsed:.2f} seconds.")
+
 explanation = explainer.explain_instance(X_test.iloc[0], model.predict, num_features=5)
 print(explanation.as_list())
