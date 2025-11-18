@@ -1,28 +1,21 @@
 '''
 ### CatBoosting Algorithm
-
 This notebook demonstrates how to train and evaluate a CatBoost classifier using a dataset with many categorical features (the 'adult' dataset from OpenML).
-
 What you'll find here:
 - A reusable function `train_catboost_classifier` that trains CatBoost, performs optional hyperparameter tuning, and returns metrics and feature importances.
 - Use of CatBoost Pool and categorical feature handling.
 - Evaluation metrics (accuracy, precision, recall, F1, AUC), confusion matrix and classification report.
 - Hyperparameter tuning using RandomizedSearchCV (sklearn) with CatBoost as the estimator.
-
-Run the cells below in order. The main example loads the `adult` dataset, identifies categorical columns automatically, and trains CatBoost.
 '''
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 from sklearn.datasets import fetch_openml, load_wine
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, classification_report, confusion_matrix
-
 from catboost import CatBoostClassifier, Pool
-
 import joblib
 import warnings
 warnings.filterwarnings('ignore')
@@ -30,12 +23,9 @@ warnings.filterwarnings('ignore')
 #####################################
 # Function to train CatBoostClassifier with hyperparameter tuning
 #####################################
-def train_catboost_classifier(df, target_col, cat_features=None, params=None,
-                                random_state=42, use_gpu=False, sample_weight=None, class_weights=None,
-                                save_model_path=None, verbose=100):
+def train_catboost_classifier(df, target_col, cat_features=None, params=None, random_state=42, use_gpu=False, 
+                              sample_weight=None, class_weights=None, save_model_path=None, verbose=100):
     """
-    Train a CatBoostClassifier with many commonly-used parameters and helpers suitable for industry use.
-
     Features implemented:
     - Pool usage to pass categorical features and sample weights.
     - Support for class_weights and sample_weight.
@@ -149,10 +139,6 @@ def train_catboost_classifier(df, target_col, cat_features=None, params=None,
 
     result = dict(model=model, metrics=metrics, feature_importances=feature_importances, label_encoder=le, saved_path=saved_path)
     return result
-
-#####################################
-## End of function definition
-#####################################
 
 #####################################
 #### Example usage
