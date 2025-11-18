@@ -6,7 +6,6 @@ and target y (and other technique-specific arguments). The functions focus on th
 rather than modeling.
 All functions return dicts with arrays of scores so you can integrate them into pipelines, model selection, or reporting.
 """
-
 import numpy as np
 import pandas as pd
 from sklearn.datasets import load_breast_cancer, load_diabetes
@@ -39,14 +38,12 @@ def get_classification_data():
     y = data.frame[data.target.name]
     return X, y
 
-
 def get_regression_data():
     """Load sample regression dataset (diabetes)."""
     data = load_diabetes(as_frame=True)
     X = data.frame.drop(columns=["target"])
     y = data.frame["target"]
     return X, y
-
 
 #################################################################################
 ## Cross-validation functions
@@ -189,7 +186,6 @@ def nested_cv_random_search(estimator, param_distributions, X, y, inner_cv, oute
     scores = cross_val_score(random_search, X, y, cv=outer_cv,
                              scoring=scoring, n_jobs=n_jobs)
     return _wrap_scores(scores)
-
 
 #################################################################################
 ## End of Cross-validation functions
