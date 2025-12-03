@@ -4,3 +4,7 @@
 extras/
 .code-workspace
 .vscode
+
+# vscode
+*.code-workspace
+/.vscode/*.code-workspace
