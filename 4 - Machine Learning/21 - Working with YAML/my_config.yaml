@@ -1,0 +1,18 @@
+#INITIAL SETTINGS
+data_directory: ./Datasets/breast_cancer_wisconsin/
+data_name: breast-cancer-wisconsin.data
+drop_columns: ["id"]
+target_name: class
+test_size: 0.2
+model_directory: D:/OneDrive - Northeastern University/Jupyter Notebook/Machine Learning Algorithms/4 - Machine Learning/21 - Working with YAML/model/
+model_name: KNN_classifier.pkl
+
+
+#kNN parameters
+n_neighbors: 5
+weights: uniform
+algorithm: auto
+leaf_size: 15
+p: 2
+metric: minkowski
+n_jobs: 1
