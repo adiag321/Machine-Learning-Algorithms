@@ -1,5 +1,5 @@
 """
-Model Agnostic Approach For Regression:
+Model Agnostic Approach For Classification Problems:
 1. Permutation Feature Importance
 2. SHAP (SHapley Additive exPlanations) for Tree Models
 3. Lime (Local Interpretable Model-agnostic Explanations) for Black Box Models
@@ -17,7 +17,6 @@ from sklearn.inspection import permutation_importance
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
-
 
 project_dir = "D:/OneDrive - Northeastern University/Jupyter Notebook/Machine Learning Algorithms/4 - Machine Learning/08 - Feature Importance"
 
@@ -41,44 +40,86 @@ print(classification_report(y_pred, y_test))        # Classification report
 #############################################
 ## SHAP Explainer
 #############################################
-# Create an explainer
-explainer = shap.TreeExplainer(rf_model)
+def shap_apply(model, X_train_data, X_test_data):
+    '''
+    Parameters
+    ----------
+    model : sklearn model. The model to explain
+    X_train_data : pandas DataFrame
+    X_test_data : pandas DataFrame
 
-# Calculate SHAP values for the test set: Shap_values is in 3d array 
-shap_values = explainer(X_test)
+    Returns
+    -------
+    shap : shap object
+    shap_values : numpy array. The SHAP values for the test set
 
-# Summary Plot
-# Used for Global Interpretation 
-shap.summary_plot(shap_values[:,:,1], X_test, plot_type="bar")
+    Notes
+    -----
+    This function provides a way to apply SHAP values to a given model and data. It can be used to explain the predictions of a model.
 
-# Violin Plot
-shap.plots.violin(shap_values[:,:,1])
+    Examples
+    --------
+    >>> from sklearn.ensemble import RandomForestClassifier
+    >>> from sklearn.datasets import load_iris
+    >>> from sklearn.model_selection import train_test_split
+    >>> X, y = load_iris(return_X_y=True)
+    >>> X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    >>> rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
+    >>> rf_model.fit(X_train, y_train)
+    >>> shap, shap_values = shap_apply(rf_model, X_train, X_test)
+    '''
+    # Create an explainer
+    explainer = shap.TreeExplainer(model)
 
-# Dependence Plot
-# Its a type of scatter plot that displays how a model's predictions are affected by a specific feature
-shap.dependence_plot("mean radius", shap_values[:,:,1].values, X_test, interaction_index = "worst area")
+    # Calculate SHAP values for the test set: Shap_values is in 3d array 
+    shap_values = explainer(X_test_data)
 
-# Force Plot
-# Want to examine the first sample in the testing set to determine which features contributed to the "0" or "1" result.
-shap.plots.force(explainer.expected_value[1], shap_values[0, :, 1].values, X_test.iloc[0, :], matplotlib = True)  ## For class 1    
-shap.plots.force(explainer.expected_value[0], shap_values[0, :, 0].values, X_test.iloc[0, :], matplotlib = True)  ## For class 0
+    print(f'Shape of test data: {X_test_data.shape}')
+    print(f'Type of Shap_values: {type(shap_values)}. Length of the list: {len(shap_values)}')
+    print(f'Shape of Shap_values: {shap_values.shape}')
 
-# Decision Plot
-# It visually shows the model decisions by mapping the cumulative SHAP values for each prediction
-shap.decision_plot(explainer.expected_value[1], shap_values[:, :, 1].values, X_test.columns)       # For class 1
-shap.decision_plot(explainer.expected_value[0], shap_values[:, :, 0].values, X_test.columns)       # For class 0
-''' 
-Note for Decision Plot:
-Each plotted line on the decision plot shows how strongly the individual features contributed to a 
-single model prediction, thus explaining what feature values pushed the prediction.
-'''
+    # Summary Plot
+    # Used for Global Interpretation
+    print("Summary Plot")
+    shap.summary_plot(shap_values[:,:,1], X_test_data, plot_type="bar")
 
-# Waterfall Plot:
-# Generate waterfall plot for a single instance (local interpretation)
-shap_values_positive = shap_values[:, :, 1]  # All samples, all features, class 1
-shap_values_negative = shap_values[:, :, 0]  # All samples, all features, class 0
+    # Violin Plot
+    print("Violin Plot")
+    shap.plots.violin(shap_values[:,:,1])
 
-# Now waterfall plot works with single index
-shap.waterfall_plot(shap_values_positive[0])
-shap.waterfall_plot(shap_values_negative[0])
-plt.show()
+    # Dependence Plot   
+    # Its a type of scatter plot that displays how a model's predictions are affected by a specific feature
+    print("Dependence Plot")
+    shap.dependence_plot("mean radius", shap_values[:,:,1].values, X_test_data, interaction_index = "worst area")
+
+    # Force Plot
+    # Want to examine the first sample in the testing set to determine which features contributed to the "0" or "1" result.
+    print("Force Plot")
+    shap.plots.force(explainer.expected_value[1], shap_values[0, :, 1].values, X_test_data.iloc[0, :], matplotlib = True)  ## For class 1    
+    shap.plots.force(explainer.expected_value[0], shap_values[0, :, 0].values, X_test_data.iloc[0, :], matplotlib = True)  ## For class 0
+
+    # Decision Plot
+    # It visually shows the model decisions by mapping the cumulative SHAP values for each prediction
+    print("Decision Plot")
+    shap.decision_plot(explainer.expected_value[1], shap_values[:, :, 1].values, X_test_data.columns)       # For class 1
+    shap.decision_plot(explainer.expected_value[0], shap_values[:, :, 0].values, X_test_data.columns)       # For class 0
+    ''' 
+    Note for Decision Plot:
+    Each plotted line on the decision plot shows how strongly the individual features contributed to a 
+    single model prediction, thus explaining what feature values pushed the prediction.
+    '''
+
+    # Waterfall Plot:
+    # Generate waterfall plot for a single instance (local interpretation)
+    print("Waterfall Plot")
+    shap_values_positive = shap_values[:, :, 1]  # All samples, all features, class 1
+    shap_values_negative = shap_values[:, :, 0]  # All samples, all features, class 0
+
+    # Now waterfall plot works with single index
+    shap.waterfall_plot(shap_values_positive[0])
+    shap.waterfall_plot(shap_values_negative[0])
+    plt.show()
+
+    return shap, shap_values
+
+shap_explainer, shap_vals = shap_apply(model = rf_model, X_train_data = X_train, X_test_data = X_test)
