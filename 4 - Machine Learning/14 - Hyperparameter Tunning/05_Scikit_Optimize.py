@@ -27,21 +27,20 @@ y = data.price_range.values
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
+# Create classifier 
+rf_classifier = RandomForestClassifier(n_jobs=-1) 
+
 ###############################################
 # (a) First Approach: Use BayesSearchCV to perform hyperparameter optimization for the Random Forest algorithm
 # The benefit of BayesSearchCV is that the search procedure is performed automatically, requiring minimal configuration. 
 # The class can be used in the same way as the Scikit-Learn (GridSearchCV and RandomizedSearchCV).
 ###############################################
-# Create classifier 
-rf_classifier = RandomForestClassifier(n_jobs=-1) 
-
 # Define Search Space
 params = {
     "n_estimators": [100, 200, 300, 400],
     "max_depth": (1, 9),
     "criterion": ["gini", "entropy"],
 }
-
 def BaseSearchcv_tuning(classifier, base_params, x_data, y_data):
     # Define the BayesSearchCV configuration
     search = BayesSearchCV(
@@ -87,21 +86,24 @@ def evaluate_model(**params):
 ## Note: The use_named_args() decorator allows your objective function to receive the parameters as keyword arguments. 
 # This is particularly convenient when you want to set scikit-learn estimator parameters.
 
-# Fine Tune the Model
-result = gp_minimize(
-    func = evaluate_model,
-    dimensions = search_space,
-    n_calls = 30,
-    random_state = 42,
-    verbose = True,
-    n_jobs = 1,
-)
+def search_space_opt(evaluate_model, search_space):
+    # Fine Tune the Model
+    result = gp_minimize(
+        func = evaluate_model,
+        dimensions = search_space,
+        n_calls = 30,
+        random_state = 42,
+        verbose = True,
+        n_jobs = 1,
+    )
 
-# summarizing finding:
+    # summarizing finding:
+    print('Best Accuracy: %.3f' % (result.fun)) 
+    print('Best Parameters: %s' % (result.x))
 
-print('Best Accuracy: %.3f' % (result.fun)) 
-print('Best Parameters: %s' % (result.x))
+    # Plot convergence
+    plot_convergence(result) 
+    
+    return result, result.fun, result.x
 
-
-
-plot_convergence(result) 
+result, best_acc, best_params = search_space_opt(evaluate_model = evaluate_model, search_space = search_space)
