@@ -4,6 +4,7 @@
 extras/
 .code-workspace
 .vscode
+.joblib
 
 # vscode
 *.code-workspace
