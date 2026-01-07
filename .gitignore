@@ -9,3 +9,5 @@ extras/
 # vscode
 *.code-workspace
 /.vscode/*.code-workspace
+4 - Machine Learning/22 - Scikit-learn Pipelines/bank_churn_pipeline.joblib
+.vscode/settings.json
