@@ -13,3 +13,4 @@ extras/
 .vscode/settings.json
 .vscode/settings.json
 5 - Model Deployment and MLOps/03 - MLFlow/mlflow.db
+5 - Model Deployment and MLOps/01 - Streamlit Deployment/2 - Data Professor/3_Penguin App/penguins_clf.pkl
