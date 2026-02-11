@@ -140,3 +140,4 @@ extras/
 5 - Model Deployment and MLOps/03 - MLFlow/mlruns/4/models/m-f2c05b48fba74d96a5cebc06158918a9/artifacts/model.pkl
 5 - Model Deployment and MLOps/03 - MLFlow/mlruns/4/models/m-f2c05b48fba74d96a5cebc06158918a9/artifacts/python_env.yaml
 5 - Model Deployment and MLOps/03 - MLFlow/mlruns/4/models/m-f2c05b48fba74d96a5cebc06158918a9/artifacts/requirements.txt
+.vscode/settings.json
