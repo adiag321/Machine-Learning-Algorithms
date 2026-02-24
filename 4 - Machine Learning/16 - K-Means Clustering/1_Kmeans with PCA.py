@@ -38,7 +38,7 @@ def finding_best_k(data, max_k=20):
 
     kl = KneeLocator(range_values, scores, curve="convex", direction="decreasing")
     print(f"Optimal number of clusters: {kl.elbow}")
-    return kl.elbow
+    return scores, kl.elbow
 
 ## Applying Kmeans Clustering
 def kmeans_clustering(optimal_k, data):
@@ -165,9 +165,11 @@ data = load_iris()
 df = pd.DataFrame(data.data, columns=data.feature_names)
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(df)
+scaled_data_df = pd.DataFrame(scaled_data, columns = data.feature_names)
+print(scaled_data_df.head())
 
 # Find optimal number of clusters
-optimal_k_value = finding_best_k(scaled_data)
+intertia_score, optimal_k_value = finding_best_k(scaled_data)
 
 kmeans_model_before, labels_before, cluster_centers_before = kmeans_clustering(optimal_k = optimal_k_value, data = scaled_data)
 
@@ -175,7 +177,7 @@ kmeans_model_before, labels_before, cluster_centers_before = kmeans_clustering(o
 pca, pca_data = apply_pca(scaled_data, n_components=2, labels=labels_before, 
                           title=f"KMeans Clusters (k={optimal_k_value}) after PCA")
 
-kmeans_after, labels_after, cluster_centers_after  = kmeans_clustering(optimal_k=optimal_k_value, data = pca_data)
+kmeans_after, labels_after, cluster_centers_after  = kmeans_clustering(optimal_k = optimal_k_value, data = pca_data)
 
 
 ## Adding cluster labels to dataframe
