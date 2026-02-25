@@ -10,8 +10,12 @@ This is a widely used traditional method that performing hyperparameter tuning i
 ### 2. Random Search
 This method works differently where random combinations of the values of the hyperparameters are used to find the best solution for the built model. The drawback of Random Search is sometimes could miss important points(values) in the search space.
 
-## Alternative Hyperparameter Optimization techniques
+## Alternative Hyperparameter Optimization techniques using `Bayesian Optimization`
 
+### What is Bayesian Optimization?
+Bayesian optimization is a sequential model-based optimization technique that is used to find the global optimum of an objective function. It is a probabilistic approach that uses a surrogate model to approximate the objective function and then uses an acquisition function to decide which point to evaluate next.
+
+Using an acquisition function like expected improvement
 ### 1. Hyperopt
 Hyperopt uses a form of Bayesian optimization for parameter tuning that allows you to get the best parameters for a given model. It can optimize a model with hundreds of parameters on a large scale.
 
