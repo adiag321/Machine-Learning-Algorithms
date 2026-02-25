@@ -79,7 +79,7 @@ meta_train = np.zeros((X_train.shape[0], len(base_models)))   # shape: (n_train,
 for fold_num, (train_idx, val_idx) in enumerate(kf.split(X_train), 1):
     # Split the training data into fold-train and fold-validation
     X_fold_train, X_fold_val = X_train[train_idx], X_train[val_idx]
-    y_fold_train             = y_train[train_idx]
+    y_fold_train = y_train[train_idx]
 
     print(f"\nFold {fold_num}  |  Train: {len(train_idx)}  |  Val: {len(val_idx)}")
 
@@ -90,10 +90,10 @@ for fold_num, (train_idx, val_idx) in enumerate(kf.split(X_train), 1):
         # Predict on fold-validation → store in the correct rows of meta_train
         meta_train[val_idx, i] = model.predict(X_fold_val)
 
-        print(f"  {name} trained on fold {fold_num}")
+        print(f"{name} trained on fold {fold_num}")
 
 print("\nmeta_train shape:", meta_train.shape)
-meta_train_df = pd.DataFrame(meta_train, columns=base_models.keys())
+meta_train_df = pd.DataFrame(meta_train, columns = base_models.keys())
 meta_train_df["target"] = y_train
 print(meta_train_df.head())
 
