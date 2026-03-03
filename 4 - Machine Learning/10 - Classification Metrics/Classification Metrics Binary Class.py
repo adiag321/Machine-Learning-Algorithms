@@ -44,23 +44,29 @@ dec_tree_y_pred = dec_tree.predict(X_test)
 def evaluate_model(name, y_true, y_pred, y_proba=None):
     print(f"\n{name}\n{'-' * len(name)}")
     
+    ## Calcualting from scratch
+    cm = confusion_matrix(y_true, y_pred)
+    tn, fp, fn, tp = cm.ravel()
+
     accuracy = accuracy_score(y_true, y_pred)
     precision = precision_score(y_true, y_pred)
     recall = recall_score(y_true, y_pred)
     f1 = f1_score(y_true, y_pred)
-    cm = confusion_matrix(y_true, y_pred)
-    tn, fp, fn, tp = cm.ravel()
     specificity = tn / (tn + fp)
+    sensitivity = tp / (tp + fn)
     
+    ## Using sklearn
     # Confusion Matrix
     print("\nConfusion Matrix:\n", pd.DataFrame(cm,
                                               columns=["Pred 0", "Pred 1"],
                                               index=["Actual 0", "Actual 1"]))
+
     print("\nClassification Report:\n", classification_report(y_true, y_pred))
     
     print(f"Accuracy         : {accuracy:.4f}")
     print(f"Precision        : {precision:.4f}")
     print(f"Recall (Sensitivity): {recall:.4f}")
+    print(f"Sensitivity      : {sensitivity:.4f}")
     print(f"Specificity      : {specificity:.4f}")
     print(f"Balanced Accuracy: {balanced_accuracy_score(y_true, y_pred):.4f}")
     print(f"F1 Score         : {f1:.4f}")
@@ -132,10 +138,10 @@ def evaluate_model(name, y_true, y_pred, y_proba=None):
 ################################
 # Evaluate both models
 ################################
-log_reg_y_proba = log_reg.predict_proba(X_test)[:, 1]
+log_reg_y_proba = log_reg.predict_proba(X_test)[:, 1]  ## Class 1 probability
 evaluate_model("Logistic Regression", y_test, log_reg_y_pred, y_proba=log_reg_y_proba)
 
-dec_tree_y_proba = dec_tree.predict_proba(X_test)[:, 1]
+dec_tree_y_proba = dec_tree.predict_proba(X_test)[:, 1]  ## Class 1 probability
 evaluate_model("Decision Tree", y_test, dec_tree_y_pred, y_proba=dec_tree_y_proba)
 
 
