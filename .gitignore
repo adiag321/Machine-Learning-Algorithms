@@ -22,3 +22,4 @@ extras/
 .vscode/settings.json
 .vscode/settings.json
 4 - Machine Learning/20 - Logging/my_ml_project.log
+/5 - Model Deployment and MLOps/03 - MLFlow/mlartifacts
