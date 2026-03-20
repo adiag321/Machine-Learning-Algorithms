@@ -48,7 +48,7 @@ for pred_model_name, config in model_configs.items():
     
     # Start a PARENT run for the Model Type (e.g., "Random_Forest")
     # This groups all the hyperparam variations under one collapsible header in the UI
-    with mlflow.start_run(run_name=pred_model_name) as parent_run:
+    with mlflow.start_run(run_name = pred_model_name) as parent_run:
         print(f"Running sweep for: {pred_model_name}")
         
         # Generate all combinations of parameters (Grid Search)
@@ -57,7 +57,7 @@ for pred_model_name, config in model_configs.items():
         for params in param_combinations:
             
             # Start a CHILD run for the specific hyperparameters (nested=True)
-            with mlflow.start_run(run_name=f"combo_{param_combinations.index(params)}", nested=True):
+            with mlflow.start_run(run_name = f"combo_{param_combinations.index(params)}", nested=True):
                 
                 # A. Init and Train Model
                 clf = config["model_class"](**params)
@@ -76,7 +76,7 @@ for pred_model_name, config in model_configs.items():
                 signature = infer_signature(X_train, clf.predict(X_train))
 
                 # Log the actual model file (optional, can take space)
-                model_info = mlflow.sklearn.log_model(sk_model = clf, model_type = pred_model_name, signature = signature, input_example=X_test[:5])
+                model_info = mlflow.sklearn.log_model(sk_model = clf, model_type = pred_model_name, signature = signature, input_example = X_test[:5])
                 
                 print(f"Logged: {params} | Accuracy: {accuracy:.4f}")
 
