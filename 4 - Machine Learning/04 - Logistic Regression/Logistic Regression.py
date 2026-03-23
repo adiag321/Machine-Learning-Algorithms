@@ -10,8 +10,13 @@ import warnings
 warnings.filterwarnings("ignore")
 pd.set_option('display.max_columns', None)
 
+# Add parent directory to path
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+os.chdir(os.path.normpath(os.getcwd() + os.sep + os.pardir))       # Getting parent directory
 
-os.chdir('D:\\OneDrive - Northeastern University\\Jupyter Notebook\\Machine Learning Algorithms')
+# os.chdir('D:\\OneDrive - Northeastern University\\Jupyter Notebook\\Machine Learning Algorithms')
 
 # Load datasets
 train_data = pd.read_csv("./Datasets/Titanic/train_titanic.csv")
@@ -101,6 +106,10 @@ def evaluate_model(model, X, y, dataset_name=""):
     plt.show()
     
     return preds, probs
+
+#####################################
+## Main Function
+#####################################
 
 # Run predictions and evaluation
 model = logistic_regression(train_x, train_y, test_x, test_y, C=1.0, penalty='l2')
