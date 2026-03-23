@@ -12,8 +12,9 @@ from sklearn.metrics import (confusion_matrix, f1_score, accuracy_score, classif
 import warnings
 warnings.filterwarnings('ignore')
 
-os.chdir(r'D:\OneDrive - Northeastern University\Jupyter Notebook\Machine Learning Algorithms\Datasets')
-os.chdir(r'/Users/adityaagarwal/Library/CloudStorage/OneDrive-NortheasternUniversity/Jupyter Notebook/Machine Learning Algorithms/Datasets')
+# Set the path to the dataset
+dataset_path = os.path.join("..", "..", "Datasets")
+os.chdir(dataset_path)
 
 # Set up logging to both file and console
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
