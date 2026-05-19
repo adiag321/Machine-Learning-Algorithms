@@ -1,321 +1,257 @@
-"""
-Simple calibration example without custom functions.
-This script:
-1. Trains 2 models
-2. Collects raw probability scores
-3. Compares probabilities with actual labels
-4. Creates reliability diagrams and calculates ECE
-5. Applies Platt scaling and isotonic regression
-6. Builds a detailed dataframe with all important columns
+"""Calibration in Machine Learning
+This script shows what probability calibration means and why it matters.
+We use the breast cancer dataset and compare 3 classifiers with 2 calibration methods (Platt Scaling and Isotonic Regression).
 """
 
-import matplotlib
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from sklearn.calibration import CalibratedClassifierCV, calibration_curve
+import matplotlib.pyplot as plt
 from sklearn.datasets import load_breast_cancer
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, brier_score_loss
 from sklearn.model_selection import train_test_split
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
-
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.linear_model import LogisticRegression
+from sklearn.calibration import CalibratedClassifierCV, calibration_curve
+from sklearn.metrics import brier_score_loss, accuracy_score, roc_auc_score, precision_score, recall_score
+import warnings
+warnings.filterwarnings("ignore")
 pd.set_option('display.max_columns', None)
 
-RANDOM_STATE = 42
-TEST_SIZE = 0.20
-N_BINS = 10
-CONFIDENCE_THRESHOLD = 0.70
+# ==========================================
+# Utility Functions
+# ==========================================
+# --- Helper Function for ECE ---
+def calculate_ece(y_true, y_prob, n_bins=10):
+    """Calculates the Expected Calibration Error (ECE)"""
+    bin_edges = np.linspace(0., 1., n_bins + 1)
+    bin_indices = np.digitize(y_prob, bin_edges, right=True)
+    ece = 0
+    for b in range(1, n_bins + 1):
+        mask = (bin_indices == b)
+        if np.any(mask):
+            bin_acc = np.mean(y_true[mask])
+            bin_conf = np.mean(y_prob[mask])
+            ece += np.abs(bin_acc - bin_conf) * np.sum(mask) / len(y_true)
+    return ece
 
-# 1. Load sample dataset
-data = load_breast_cancer(as_frame=True)
+def apply_platt_scaling(base_model, X_calib, y_calib, X_test):
+    """Applies Platt Scaling (sigmoid) calibration and returns calibrated probabilities."""
+    calibrator = CalibratedClassifierCV(estimator=base_model, method='sigmoid', cv=5)
+    calibrator.fit(X_calib, y_calib)
+    return calibrator, calibrator.predict_proba(X_test)[:, 1]
+
+def apply_isotonic_regression(base_model, X_calib, y_calib, X_test):
+    """Applies Isotonic Regression calibration and returns calibrated probabilities."""
+    calibrator = CalibratedClassifierCV(estimator=base_model, method='isotonic', cv=5)
+    calibrator.fit(X_calib, y_calib)
+    return calibrator, calibrator.predict_proba(X_test)[:, 1]
+
+def plot_reliability_curves(y_true, prob_dict, ax, model_name):
+    """Plots reliability diagram for multiple calibration states on one axis.
+    
+    Args:
+        y_true: True labels
+        prob_dict: dict of {label: probabilities}, e.g. {'Uncalibrated': prob_uncal, ...}
+        ax: matplotlib axis to plot on
+        model_name: title for the subplot
+    """
+    ax.plot([0, 1], [0, 1], "k:", label="Perfectly calibrated")
+    for label, probs in prob_dict.items():
+        brier = brier_score_loss(y_true, probs)
+        ece = calculate_ece(y_true, probs)
+        auc = roc_auc_score(y_true, probs)
+        frac_pos, mean_pred = calibration_curve(y_true, probs, n_bins=10, strategy='quantile')
+        ax.plot(mean_pred, frac_pos, marker='s', label=f'{label} (AUC:{auc:.3f}, Brier:{brier:.3f}, ECE:{ece:.3f})')
+    
+    ax.set_title(f"{model_name}")
+    ax.set_xlabel("Mean predicted probability")
+    ax.set_ylabel("Fraction of positives")
+    ax.legend(loc="lower right", fontsize=7)
+
+# ==========================================
+# 1. Load Data & 3-Way Split
+# ==========================================
+data = load_breast_cancer()
 X = data.data
 y = data.target
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, stratify=y, random_state=RANDOM_STATE)
+# 3-way split: Train (60%) / Calibration (20%) / Test (20%)
+X_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.40, random_state=42, stratify=y)
+X_calib, X_test, y_calib, y_test = train_test_split(X_temp, y_temp, test_size=0.50, random_state=42, stratify=y_temp)
 
-# 2. Create 2 algorithms
-models = {
-    "Logistic Regression": make_pipeline(
-        StandardScaler(),
-        LogisticRegression(max_iter=5000, random_state=RANDOM_STATE),
-    ),
-    "Support Vector Machine": make_pipeline(
-        StandardScaler(),
-        SVC(kernel="rbf", probability=True, random_state=RANDOM_STATE),
-    ),
+data_sizes = {'Train_Samples': len(y_train),
+                'Calib_Samples': len(y_calib),
+                'Test_Samples': len(y_test)
+}
+print(f"Split: Train={data_sizes['Train_Samples']}, Calib={data_sizes['Calib_Samples']}, Test={data_sizes['Test_Samples']}")
+
+# ==========================================
+# 2. Define Models
+# ==========================================
+models = {"Random Forest": RandomForestClassifier(n_estimators=100, random_state=42),
+          "Naive Bayes": GaussianNB(),
+          "Logistic Regression": LogisticRegression(max_iter=10000, random_state=42)
 }
 
-summary_rows = []
-all_dataframes = []
-plot_results = []
+# ==========================================
+# 3. Train, Calibrate & Collect Results
+# ==========================================
+all_summaries = []
+all_prediction_logs = []
 
-# 3. Train each model and apply calibration
-for model_name, model in models.items():
-    # Raw model
+# Reliability diagrams: 1 subplot per model
+fig, axes = plt.subplots(1, 3, figsize=(20, 6))
+fig.suptitle("Reliability Diagrams (Breast Cancer Dataset)", fontsize=16)
+
+for i, (model_name, model) in enumerate(models.items()):
+    ax = axes[i]
+
+    # --- Train base model ---
     model.fit(X_train, y_train)
-    raw_train_prob = model.predict_proba(X_train)[:, 1]
-    raw_test_prob = model.predict_proba(X_test)[:, 1]
+    prob_uncal = model.predict_proba(X_test)[:, 1]
 
-    # Platt scaling
-    platt_model = CalibratedClassifierCV(model, method="sigmoid", cv=5)
-    platt_model.fit(X_train, y_train)
-    platt_train_prob = platt_model.predict_proba(X_train)[:, 1]
-    platt_test_prob = platt_model.predict_proba(X_test)[:, 1]
+    # --- Apply calibration methods ---
+    platt_model, prob_platt = apply_platt_scaling(model, X_calib, y_calib, X_test)
+    iso_model, prob_iso = apply_isotonic_regression(model, X_calib, y_calib, X_test)
 
-    # Isotonic regression
-    isotonic_model = CalibratedClassifierCV(model, method="isotonic", cv=5)
-    isotonic_model.fit(X_train, y_train)
-    isotonic_train_prob = isotonic_model.predict_proba(X_train)[:, 1]
-    isotonic_test_prob = isotonic_model.predict_proba(X_test)[:, 1]
+    # --- Plot reliability curves ---
+    prob_dict = {'Uncalibrated': prob_uncal, 'Platt Scaling': prob_platt, 'Isotonic': prob_iso}
+    plot_reliability_curves(y_test, prob_dict, ax, model_name)
 
-    # Convert probabilities to labels
-    raw_test_pred = (raw_test_prob >= 0.5).astype(int)
-    platt_test_pred = (platt_test_prob >= 0.5).astype(int)
-    isotonic_test_pred = (isotonic_test_prob >= 0.5).astype(int)
+    # --- DataFrame 1: Aggregate Summary (one row per calibration state) ---
+    prob_dict = {'Uncalibrated': prob_uncal, 'Platt Scaling': prob_platt, 'Isotonic': prob_iso}
 
-    # Accuracy
-    raw_accuracy = accuracy_score(y_test, raw_test_pred)
-    platt_accuracy = accuracy_score(y_test, platt_test_pred)
-    isotonic_accuracy = accuracy_score(y_test, isotonic_test_pred)
+    for calib_state, probs in prob_dict.items():
+        preds = (probs >= 0.50).astype(int)
+        all_summaries.append({'Algorithm': model_name,
+                              'Calibration_State': calib_state,
+                              'Brier_Score': round(brier_score_loss(y_test, probs), 4),
+                              'ECE': round(calculate_ece(y_test, probs), 4),
+                              'ROC_AUC': round(roc_auc_score(y_test, probs), 4),
+                              'Accuracy': round(accuracy_score(y_test, preds), 4),
+                              'Precision': round(precision_score(y_test, preds, zero_division=0), 4),
+                              'Recall': round(recall_score(y_test, preds, zero_division=0), 4),
+                              'Positive_Preds': int(np.sum(preds)),
+                              **data_sizes
+                              })
 
-    # Brier score
-    raw_brier = brier_score_loss(y_test, raw_test_prob)
-    platt_brier = brier_score_loss(y_test, platt_test_prob)
-    isotonic_brier = brier_score_loss(y_test, isotonic_test_prob)
+    # --- DataFrame 2: Row-Level Prediction Log (one row per observation) ---
+    df_preds = pd.DataFrame({'Algorithm': model_name,
+                              'y_actual': y_test,
+                              'Prob_Uncalibrated': np.round(prob_uncal, 4),
+                              'Prob_Platt': np.round(prob_platt, 4),
+                              'Prob_Isotonic': np.round(prob_iso, 4),
+                              'Pred_Uncalibrated': (prob_uncal >= 0.50).astype(int),
+                              'Pred_Platt': (prob_platt >= 0.50).astype(int),
+                              'Pred_Isotonic': (prob_iso >= 0.50).astype(int)
+                              })
+    all_prediction_logs.append(df_preds)
 
-    # ECE for raw probabilities
-    raw_ece = 0.0
-    raw_bin_edges = np.linspace(0, 1, N_BINS + 1)
-    raw_y_true_array = y_test.to_numpy()
-    for i in range(N_BINS):
-        left_edge = raw_bin_edges[i]
-        right_edge = raw_bin_edges[i + 1]
-        raw_in_bin = (raw_test_prob >= left_edge) & (raw_test_prob < right_edge)
-        if i == N_BINS - 1:
-            raw_in_bin = (raw_test_prob >= left_edge) & (raw_test_prob <= right_edge)
-        if raw_in_bin.sum() > 0:
-            raw_bin_accuracy = raw_y_true_array[raw_in_bin].mean()
-            raw_bin_confidence = raw_test_prob[raw_in_bin].mean()
-            raw_bin_weight = raw_in_bin.mean()
-            raw_ece += abs(raw_bin_accuracy - raw_bin_confidence) * raw_bin_weight
-
-    # ECE for Platt scaling
-    platt_ece = 0.0
-    platt_bin_edges = np.linspace(0, 1, N_BINS + 1)
-    for i in range(N_BINS):
-        left_edge = platt_bin_edges[i]
-        right_edge = platt_bin_edges[i + 1]
-        platt_in_bin = (platt_test_prob >= left_edge) & (platt_test_prob < right_edge)
-        if i == N_BINS - 1:
-            platt_in_bin = (platt_test_prob >= left_edge) & (platt_test_prob <= right_edge)
-        if platt_in_bin.sum() > 0:
-            platt_bin_accuracy = raw_y_true_array[platt_in_bin].mean()
-            platt_bin_confidence = platt_test_prob[platt_in_bin].mean()
-            platt_bin_weight = platt_in_bin.mean()
-            platt_ece += abs(platt_bin_accuracy - platt_bin_confidence) * platt_bin_weight
-
-    # ECE for Isotonic regression
-    isotonic_ece = 0.0
-    isotonic_bin_edges = np.linspace(0, 1, N_BINS + 1)
-    for i in range(N_BINS):
-        left_edge = isotonic_bin_edges[i]
-        right_edge = isotonic_bin_edges[i + 1]
-        isotonic_in_bin = (isotonic_test_prob >= left_edge) & (isotonic_test_prob < right_edge)
-        if i == N_BINS - 1:
-            isotonic_in_bin = (isotonic_test_prob >= left_edge) & (isotonic_test_prob <= right_edge)
-        if isotonic_in_bin.sum() > 0:
-            isotonic_bin_accuracy = raw_y_true_array[isotonic_in_bin].mean()
-            isotonic_bin_confidence = isotonic_test_prob[isotonic_in_bin].mean()
-            isotonic_bin_weight = isotonic_in_bin.mean()
-            isotonic_ece += abs(isotonic_bin_accuracy - isotonic_bin_confidence) * isotonic_bin_weight
-
-    # Summary table rows
-    summary_rows.append(
-        {
-            "model_name": model_name,
-            "version": "raw",
-            "accuracy": raw_accuracy,
-            "brier_score": raw_brier,
-            "ece": raw_ece,
-        }
-    )
-    summary_rows.append(
-        {
-            "model_name": model_name,
-            "version": "platt_scaling",
-            "accuracy": platt_accuracy,
-            "brier_score": platt_brier,
-            "ece": platt_ece,
-        }
-    )
-    summary_rows.append(
-        {
-            "model_name": model_name,
-            "version": "isotonic_regression",
-            "accuracy": isotonic_accuracy,
-            "brier_score": isotonic_brier,
-            "ece": isotonic_ece,
-        }
-    )
-
-    # Train dataframe
-    train_df = X_train.copy().reset_index(drop=True)
-    train_y = y_train.reset_index(drop=True)
-    train_raw_pred = (raw_train_prob >= 0.5).astype(int)
-    train_confidence = np.maximum(raw_train_prob, 1 - raw_train_prob)
-
-    train_df["actual_label"] = train_y
-    train_df["train_test"] = "train"
-    train_df["model_name"] = model_name
-    train_df["predicted_label_raw"] = train_raw_pred
-    train_df["probability_score_raw"] = raw_train_prob
-    train_df["confidence_score_raw"] = train_confidence
-    train_df["model_is_confident"] = train_confidence >= CONFIDENCE_THRESHOLD
-    train_df["is_prediction_correct_raw"] = train_raw_pred == train_y
-    train_df["probability_vs_actual_gap_raw"] = np.abs(train_y - raw_train_prob)
-    train_df["probability_score_platt"] = platt_train_prob
-    train_df["probability_score_isotonic"] = isotonic_train_prob
-    train_df["predicted_label_platt"] = (platt_train_prob >= 0.5).astype(int)
-    train_df["predicted_label_isotonic"] = (isotonic_train_prob >= 0.5).astype(int)
-    train_df["brier_score_raw"] = np.nan
-    train_df["brier_score_platt"] = np.nan
-    train_df["brier_score_isotonic"] = np.nan
-    train_df["ece_raw"] = np.nan
-    train_df["ece_platt"] = np.nan
-    train_df["ece_isotonic"] = np.nan
-
-    # Test dataframe
-    test_df = X_test.copy().reset_index(drop=True)
-    test_y = y_test.reset_index(drop=True)
-    test_raw_pred = (raw_test_prob >= 0.5).astype(int)
-    test_confidence = np.maximum(raw_test_prob, 1 - raw_test_prob)
-
-    test_df["actual_label"] = test_y
-    test_df["train_test"] = "test"
-    test_df["model_name"] = model_name
-    test_df["predicted_label_raw"] = test_raw_pred
-    test_df["probability_score_raw"] = raw_test_prob
-    test_df["confidence_score_raw"] = test_confidence
-    test_df["model_is_confident"] = test_confidence >= CONFIDENCE_THRESHOLD
-    test_df["is_prediction_correct_raw"] = test_raw_pred == test_y
-    test_df["probability_vs_actual_gap_raw"] = np.abs(test_y - raw_test_prob)
-    test_df["probability_score_platt"] = platt_test_prob
-    test_df["probability_score_isotonic"] = isotonic_test_prob
-    test_df["predicted_label_platt"] = (platt_test_prob >= 0.5).astype(int)
-    test_df["predicted_label_isotonic"] = (isotonic_test_prob >= 0.5).astype(int)
-    test_df["brier_score_raw"] = raw_brier
-    test_df["brier_score_platt"] = platt_brier
-    test_df["brier_score_isotonic"] = isotonic_brier
-    test_df["ece_raw"] = raw_ece
-    test_df["ece_platt"] = platt_ece
-    test_df["ece_isotonic"] = isotonic_ece
-
-    all_dataframes.append(train_df)
-    all_dataframes.append(test_df)
-
-    plot_results.append(
-        {
-            "model_name": model_name,
-            "raw_test_prob": raw_test_prob,
-            "platt_test_prob": platt_test_prob,
-            "isotonic_test_prob": isotonic_test_prob,
-        }
-    )
-
-
-# 4. Summary dataframe
-metrics_df = pd.DataFrame(summary_rows)
-metrics_df = metrics_df.sort_values(["model_name", "brier_score"]).reset_index(drop=True)
-
-print("\nCalibration summary on test data")
-print(metrics_df.to_string(index=False, float_format=lambda x: f"{x:.4f}"))
-
-
-# 5. Detailed dataframe
-calibration_results_df = pd.concat(all_dataframes, ignore_index=True)
-
-print("\nDetailed dataframe preview")
-preview_columns = [
-    "model_name",
-    "train_test",
-    "actual_label",
-    "predicted_label_raw",
-    "probability_score_raw",
-    "model_is_confident",
-    "is_prediction_correct_raw",
-    "probability_score_platt",
-    "probability_score_isotonic",
-    "brier_score_raw",
-    "brier_score_platt",
-    "brier_score_isotonic",
-]
-print(
-    calibration_results_df[preview_columns]
-    .head(12)
-    .to_string(index=False, float_format=lambda x: f"{x:.4f}")
-)
-
-
-# 6. Confidence comparison
-confidence_summary_df = (
-    calibration_results_df[calibration_results_df["train_test"] == "test"]
-    .groupby(["model_name", "model_is_confident"], as_index=False)
-    .agg(
-        sample_count=("actual_label", "size"),
-        average_probability=("probability_score_raw", "mean"),
-        accuracy=("is_prediction_correct_raw", "mean"),
-        average_gap_from_actual=("probability_vs_actual_gap_raw", "mean"),
-    )
-)
-
-print("\nConfidence analysis on test data")
-print(confidence_summary_df.to_string(index=False, float_format=lambda x: f"{x:.4f}"))
-
-
-# 7. Reliability diagrams
-fig, axes = plt.subplots(1, 2, figsize=(14, 5), sharey=True)
-
-for ax, result in zip(axes, plot_results):
-    ax.plot([0, 1], [0, 1], "k--", label="Perfect calibration")
-
-    raw_fraction, raw_mean = calibration_curve(y_test, result["raw_test_prob"], n_bins=N_BINS)
-    platt_fraction, platt_mean = calibration_curve(y_test, result["platt_test_prob"], n_bins=N_BINS)
-    iso_fraction, iso_mean = calibration_curve(y_test, result["isotonic_test_prob"], n_bins=N_BINS)
-
-    ax.plot(raw_mean, raw_fraction, "o-", color="steelblue", label="Raw")
-    ax.plot(platt_mean, platt_fraction, "o-", color="seagreen", label="Platt")
-    ax.plot(iso_mean, iso_fraction, "o-", color="darkorange", label="Isotonic")
-
-    ax.set_title(result["model_name"])
-    ax.set_xlabel("Mean predicted probability")
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.grid(alpha=0.3)
-
-axes[0].set_ylabel("Fraction of positives")
-axes[-1].legend(loc="lower right")
 plt.tight_layout()
 plt.show()
-plt.close()
 
+# ==========================================
+# 4. Build Final DataFrames
+# ==========================================
+final_summary_df = pd.DataFrame(all_summaries)
+final_predictions_df = pd.concat(all_prediction_logs, ignore_index=True)
 
-# 8. Probability histograms
-fig, axes = plt.subplots(1, 2, figsize=(14, 5), sharey=True)
+# ==========================================
+# 5. Combined Comparison DataFrame
+# ==========================================
+# For each Algorithm, show accuracy of each method + how many predictions calibration flipped and whether flips helped.
 
-for ax, result in zip(axes, plot_results):
-    ax.hist(result["raw_test_prob"], bins=15, alpha=0.55, color="steelblue", label="Raw")
-    ax.hist(result["platt_test_prob"], bins=15, alpha=0.45, color="seagreen", label="Platt")
-    ax.hist(result["isotonic_test_prob"], bins=15, alpha=0.35, color="darkorange", label="Isotonic")
+def calibration_comparison(predictions, summary):
+    """
+    Calculate flip and correctness metrics for each algorithm and calibration method.
+    Args:
+        predictions (pd.DataFrame): DataFrame with prediction columns.
+        summary (pd.DataFrame): DataFrame with summary statistics.
+    Returns:
+        pd.DataFrame: Combined comparison with flip and correctness metrics.
+    """
+    records = []
+    for algo in predictions['Algorithm'].unique():
+        
+        print("Performing Calibration Comparison on Algorithm:", algo)
+        preds = predictions[predictions['Algorithm'] == algo]
+        summary_df = summary[summary['Algorithm'] == algo]
+        acc = summary_df.set_index('Calibration_State')['Accuracy'].to_dict()
 
-    ax.set_title(result["model_name"])
-    ax.set_xlabel("Predicted probability")
-    ax.grid(alpha=0.3)
+        uncal_correct = (preds['Pred_Uncalibrated'] == preds['y_actual'])
+        platt_correct = (preds['Pred_Platt'] == preds['y_actual'])
+        iso_correct   = (preds['Pred_Isotonic'] == preds['y_actual'])
 
-axes[0].set_ylabel("Count")
-axes[-1].legend(loc="upper center")
-plt.tight_layout()
-plt.show()
-plt.close()
+        platt_flips = (preds['Pred_Uncalibrated'] != preds['Pred_Platt']).sum()
+        platt_fixed = ((~uncal_correct) & platt_correct).sum()
+        platt_broke = (uncal_correct & (~platt_correct)).sum()
+
+        iso_flips = (preds['Pred_Uncalibrated'] != preds['Pred_Isotonic']).sum()
+        iso_fixed = ((~uncal_correct) & iso_correct).sum()
+        iso_broke = (uncal_correct & (~iso_correct)).sum()
+
+        records.append({
+            'Algorithm':    algo,
+            'Acc_Uncal':    acc.get('Uncalibrated', None),
+            'Acc_Platt':    acc.get('Platt Scaling', None),
+            'Acc_Iso':      acc.get('Isotonic', None),
+            'Platt_Flips':  platt_flips,
+            'Platt_Fixed':  platt_fixed,
+            'Platt_Broke':  platt_broke,
+            'Platt_Net':    platt_fixed - platt_broke,
+            'Iso_Flips':    iso_flips,
+            'Iso_Fixed':    iso_fixed,
+            'Iso_Broke':    iso_broke,
+            'Iso_Net':      iso_fixed - iso_broke,
+        })
+    return pd.DataFrame(records)
+
+calibration_comparison_df = calibration_comparison(predictions = final_predictions_df, summary = final_summary_df)
+
+print("--- Calibration Comparison (all models) ---")
+print("Flips = predictions changed, Fixed = errors corrected,")
+print("Broke = correct predictions ruined, Net = Fixed - Broke (+ve = helped)\n")
+calibration_comparison_df
+
+# ==========================================
+# 6. Probability Distribution Histograms
+# ==========================================
+def plot_probability_distributions(models, X_train, y_train, X_calib, y_calib, X_test, y_test):
+    fig2, axes2 = plt.subplots(1, 3, figsize=(20, 5))
+    fig2.suptitle("Probability Distribution: Before vs After Calibration (Test Set)", fontsize=14)
+
+    # Re-train to get probabilities for histograms
+    for i, (model_name, model) in enumerate(models.items()):
+        ax = axes2[i]
+        model.fit(X_train, y_train)
+        prob_uncal = model.predict_proba(X_test)[:, 1]
+
+        _, prob_platt = apply_platt_scaling(model, X_calib, y_calib, X_test)
+
+        ax.hist(prob_uncal[y_test == 1], bins=15, alpha=0.5, label='Actual 1 (Before)', color='blue')
+        ax.hist(prob_uncal[y_test == 0], bins=15, alpha=0.5, label='Actual 0 (Before)', color='red')
+        ax.hist(prob_platt[y_test == 1], bins=15, alpha=0.8, label='Actual 1 (After Platt)', color='cyan', histtype='step', linewidth=2)
+        ax.hist(prob_platt[y_test == 0], bins=15, alpha=0.8, label='Actual 0 (After Platt)', color='orange', histtype='step', linewidth=2)
+
+        ax.set_title(f'{model_name}')
+        ax.set_xlabel('Predicted Probability')
+        ax.set_ylabel('Frequency')
+        ax.legend(fontsize=7)
+        ax.grid(True)
+
+    plt.tight_layout()
+    plt.show()
+
+    return fig2, axes2
+
+# Plot probability distributions
+plot_probability_distributions(models, X_train, y_train, X_calib, y_calib, X_test, y_test)
+
+# ==========================================
+# 7. Simple Explanation
+# ==========================================
+print("\nExplanation:")
+print("A calibrated model means its predicted probabilities match the true chance of the event.")
+print("The Expected Calibration Error (ECE) measures the average difference between accuracy and confidence (predicted probability). Lower is better.")
+print("The Brier score measures the overall mean squared error of the probability predictions: lower is better.")
+print("The calibration curve compares your model against the 'Perfectly Calibrated' gray diagonal line.")
